@@ -2,43 +2,45 @@
 import Layout from "../layouts/Layout.astro";
 import {Icon} from 'astro-icon/components'
 ---
-
 <Layout>
   <main class="mt-[90px] px-8 md:ml-30">
-	<section >
-		<img 
-		  src="/images/indexFondo.png" 
-      alt="Ilustración de fondo para el curso de japonés" 
-		  class="absolute top-0 right-0 md:right-30 object-cover opacity-30 invert h-[600px] md:h-[560px]"
-		/>
+    <section>
+      <!-- Imagen de fondo -->
+      <img 
+        src="/images/indexFondo.png" 
+        alt="Ilustración de fondo para el curso de japonés" 
+        class="absolute top-0 right-0 md:right-30 object-cover opacity-30 invert h-[600px] md:h-[560px] z-10"
+      />
+      
       <h1 class="font-lilita text-gray-500 text-5xl flex flex-col mt-30 gap-6 z-20 ">
         <span>Curso <span class="text-theme-red">Japonés</span></span> 
-       <div class="flex flex-col gap-6 md:block">
-        <span>Autodidacta</span>
-        <span>desde cero.</span>
-       </div>
+        <div class="flex flex-col gap-6 md:block">
+          <span>Autodidacta</span>
+          <span>desde cero.</span>
+        </div>
       </h1>
       <h2 class="mt-8 font-semibold text-gray-500">みんなの日本語</h2>
       <article class="mt-8">
-        <a href="/lecciones">
+        <!-- Asegurando que el enlace esté por encima de la imagen -->
+        <a href="/lecciones" class="relative z-20">
           <button
-          class="border-gray-500 border-2 p-2 rounded-sm font-bold text-gray-500 cursor-pointer shadow-md hover:bg-gray-500 hover:text-white transition-colors"
-          >Comenzar Curso
-          </button
-        >
+            class="bg-transparent border-gray-500 border-2 p-2 rounded-sm font-bold text-gray-500 cursor-pointer shadow-md hover:bg-gray-500 hover:text-white transition-colors"
+          >
+            Comenzar Curso
+          </button>
         </a>
         <section class="mt-50 md:mt-10 font-mono font-semibold text-gray-600 md:max-w-[560px]">
           <p>¡Aprendé japonés desde cero! de manera Autodidacta. En este curso verás como escribir hiragana, katakana y kanjis junto a la gramática.<br /> Vení y participa de 25 Lecciones junto a actividades del "Minna no Nihongo". </p>
         </section> 
       </article>
     </section>
-    
+
     <article class="mt-10 md:max-w-[500px] md:mt-20 bg-amber-100 p-4 rounded-md">
       <section class="flex flex-col gap-2 mt-4 font-mono">
-       <div class="flex items-center gap-2">
-        <Icon name="help-circle" class="text-3xl text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" />
-        <h2 class="font-semibold text-gray-600">Preguntas Frecuentes</h2>
-       </div>
+        <div class="flex items-center gap-2">
+          <Icon name="help-circle" class="text-3xl text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" />
+          <h2 class="font-semibold text-gray-600">Preguntas Frecuentes</h2>
+        </div>
         <div class="flex flex-col gap-2">
           <p class="text-gray-500 font-bold"><span class="text-gray-700">¿Se necesita conocimientos previos?</span> No se necesita ningun tipo de conocimiento para afrontar este gran desafio como es aprender japones.</p>
           <p class="text-gray-500 font-bold"><span class="text-gray-700">¿El curso tiene algún costo?</span> El curso es completamente grátis.</p>
@@ -47,7 +49,5 @@ import {Icon} from 'astro-icon/components'
       </section>
     </article>
   </main>
-  <footer class="mt-20">
-
-  </footer>
+  <footer class="mt-20"></footer>
 </Layout>
