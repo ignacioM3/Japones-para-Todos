@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <main class="mt-[90px] px-8">
+	<div >
+		<!-- Imagen de fondo -->
+		<img 
+		  src="/images/indexFondo.png" 
+		  alt="Fondo curso japonés" 
+		  class="absolute top-0 right-0 object-cover opacity-30 invert h-[600px] z-0"
+		/>
+      <h1 class="font-lilita text-gray-500 text-5xl flex flex-col mt-30 gap-6 z-20">
+        <span>Curso <span class="text-theme-red">Japonés</span></span> <span>Autodidacta</span>
+        <span>desde cero.</span>
+      </h1>
+      <div class="mt-10">
+        <button
+          class="border-gray-500 border-2 p-2 rounded-sm font-bold text-gray-500 cursor-pointer shadow-md hover:bg-gray-500 hover:text-white"
+          >Comenzar Curso</button
+        >
+      </div>
+    </div>
+	<section class="mt-50 font-mono font-semibold text-gray-600">
+		<p>!Aprendé Japonés desde 0! de manera Autodidacta. En este curso veras como escribir hiragana, katakana y kanjis junto a la gramática.<br /> Veni y participa de nuestros 25 Lecciónes junto a actividades del "Minna no Nihongo" </p>
+	</section> 
+  </main>
+  
 </Layout>
