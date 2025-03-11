@@ -1,7 +1,23 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import {Icon} from 'astro-icon/components'
 ---
 
 <Layout>
-
+    <main class="bg-gray-300 min-h-screen py-4">
+        <section>
+            <img 
+                src="/images/fondo1.jpg" 
+                class="h-[450px] w-full object-cover rounded-b-md"
+                alt="Imagen de fondo para lecciones"
+                >
+            <h1 class="font-lilita text-center text-gray-500 text-2xl mt-5">Lecciones</h1>
+            <hr class="w-30 mx-auto border-t-2 text-gray-500 mb-5">
+            <article class="px-5 font-mono md:max-w-[450px] mx-auto">
+                <p class="mb-2">No te olvides que si no tienes conocimiento de Hiragana y Katakana ver la lección 0</p>
+                <p class="mb-2">En la lección 0 también veremos vocabulario básico y útil</p>
+                <p class="mb-2">¿Tenés alguna duda? Vamos a estar creando un canal de discord para que crezca nuestra comunidad e ir resolviendo dudas</p>
+            </article>
+        </section>
+    </main>
 </Layout>

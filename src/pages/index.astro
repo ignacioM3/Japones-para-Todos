@@ -6,7 +6,6 @@ import {Icon} from 'astro-icon/components'
 <Layout>
   <main class="mt-[90px] px-8 md:ml-30">
 	<section >
-		<!-- Imagen de fondo -->
 		<img 
 		  src="/images/indexFondo.png" 
       alt="Ilustración de fondo para el curso de japonés" 
@@ -21,10 +20,13 @@ import {Icon} from 'astro-icon/components'
       </h1>
       <h2 class="mt-8 font-semibold text-gray-500">みんなの日本語</h2>
       <article class="mt-8">
-        <button
+        <a href="/lecciones">
+          <button
           class="border-gray-500 border-2 p-2 rounded-sm font-bold text-gray-500 cursor-pointer shadow-md hover:bg-gray-500 hover:text-white transition-colors"
-          >Comenzar Curso</button
+          >Comenzar Curso
+          </button
         >
+        </a>
         <section class="mt-50 md:mt-10 font-mono font-semibold text-gray-600 md:max-w-[560px]">
           <p>¡Aprendé japonés desde cero! de manera Autodidacta. En este curso verás como escribir hiragana, katakana y kanjis junto a la gramática.<br /> Vení y participa de 25 Lecciones junto a actividades del "Minna no Nihongo". </p>
         </section> 
@@ -38,9 +40,9 @@ import {Icon} from 'astro-icon/components'
         <h2 class="font-semibold text-gray-600">Preguntas Frecuentes</h2>
        </div>
         <div class="flex flex-col gap-2">
-          <p class="text-gray-500 font-bold"><span class="font-semibold text-gray-700">¿Se necesita conocimientos previos?</span> No se necesita ningun tipo de conocimiento para afrontar este gran desafio como es aprender japones.</p>
-          <p class="text-gray-500 font-bold"><span class="font-semibold text-gray-700">¿El curso tiene algún costo?</span> El curso es completamente grátis.</p>
-          <p class="text-gray-500 font-bold"><span class="font-semibold text-gray-700">¿Recomendación?</span> Si no tenes conocimiento alguno de japones, te recomendamos no saltearte la clase 0 que es la introductoria</p>
+          <p class="text-gray-500 font-bold"><span class="text-gray-700">¿Se necesita conocimientos previos?</span> No se necesita ningun tipo de conocimiento para afrontar este gran desafio como es aprender japones.</p>
+          <p class="text-gray-500 font-bold"><span class="text-gray-700">¿El curso tiene algún costo?</span> El curso es completamente grátis.</p>
+          <p class="text-gray-500 font-bold"><span class="text-gray-700">¿Recomendación?</span> Si no tenes conocimiento alguno de japones, te recomendamos no saltearte la clase 0 que es la introductoria</p>
         </div>
       </section>
     </article>
