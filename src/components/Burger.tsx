@@ -10,7 +10,7 @@ export function Burger({ handleClick, clicked, className="" }: BurgerInterface) 
 
     return (
         <div 
-            className={`icon nav-icon-5 ${clicked ? "open" : ''} md:hidden ${className}`}
+            className={`icon nav-icon-5 ${clicked ? "open" : ''}  ${className}`}
             onClick={handleClick}
             >
             <span></span>

@@ -110,3 +110,8 @@
     border-radius: 0 0 10px 10px;
     transition: all .6s ease-in-out;
   }
+  @media (min-width: 768px ) {
+    .nav-icon-5{
+      display: none;
+    }
+  }
