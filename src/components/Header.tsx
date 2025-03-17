@@ -13,7 +13,7 @@ export default function Header() {
 
       </div>
       <div className="md:flex gap-2 hidden">
-        <a href="" className="p-2 hover:bg-gray-100 rounded-md">
+        <a href="/lecciones" className="p-2 hover:bg-gray-100 rounded-md">
           <span className="font-bold text-gray-500">Lecciones</span>
         </a>
         <a href="" className="p-2 hover:bg-gray-100 rounded-md">

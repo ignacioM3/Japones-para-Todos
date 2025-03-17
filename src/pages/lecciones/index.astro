@@ -1,23 +1,66 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import {Icon} from 'astro-icon/components'
+import Layout from "@/layouts/Layout.astro";
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+
+const clasesInfo = await getCollection("clasesInfo");
+export const prerender = true;
 ---
 
-<Layout>
-    <main class="bg-gray-300 min-h-screen py-4">
-        <section>
-            <img 
-                src="/images/fondo1.jpg" 
-                class="h-[450px] w-full object-cover rounded-b-md"
-                alt="Imagen de fondo para lecciones"
+<Layout title="Lecciones de japonés">
+  <main class="bg-gray-300 min-h-screen py-4">
+    <section>
+      <img
+        src="/images/fondo1.jpg"
+        class="h-[450px] w-full object-cover rounded-b-md"
+        alt="Imagen de fondo para lecciones"
+      />
+      <h1 class="font-lilita text-center text-gray-500 text-2xl mt-5">
+        Lecciones
+      </h1>
+      <hr class="w-30 mx-auto border-t-2 text-gray-500 mb-5" />
+      <article class="px-5 font-mono md:max-w-[450px] mx-auto">
+        <p class="mb-2">
+          No te olvides que si no tienes conocimiento de Hiragana y Katakana ver
+          la lección 0
+        </p>
+        <p class="mb-2">
+          En la lección 0 también veremos vocabulario básico y útil
+        </p>
+        <p class="mb-2">
+          ¿Tenés alguna duda? Vamos a estar creando un canal de discord para que
+          crezca nuestra comunidad e ir resolviendo dudas
+        </p>
+      </article>
+    </section>
+    <section class="w-full flex justify-center mt-10">
+      <div
+        class="flex flex-wrap items-center max-w-[700px] justify-center gap-5"
+      >
+        {
+          clasesInfo
+            .sort((a, b) => a.data.id - b.data.id)
+            .map((clase) => {
+              const { slug, data } = clase;
+              const { title, description } = data;
+              return (
+                <a
+                  href={`/lecciones/${slug}`}
+                  class="border-gray-500 border-2 w-[250px] h-[250px] flex items-center justify-center relative overflow-hidden  rounded-md"
                 >
-            <h1 class="font-lilita text-center text-gray-500 text-2xl mt-5">Lecciones</h1>
-            <hr class="w-30 mx-auto border-t-2 text-gray-500 mb-5">
-            <article class="px-5 font-mono md:max-w-[450px] mx-auto">
-                <p class="mb-2">No te olvides que si no tienes conocimiento de Hiragana y Katakana ver la lección 0</p>
-                <p class="mb-2">En la lección 0 también veremos vocabulario básico y útil</p>
-                <p class="mb-2">¿Tenés alguna duda? Vamos a estar creando un canal de discord para que crezca nuestra comunidad e ir resolviendo dudas</p>
-            </article>
-        </section>
-    </main>
+                  <img
+                    src={`/images/${slug}.webp`}
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 ease-in-out hover:scale-110"
+                    alt="Imagen de la clase de japonés"
+                  />
+                  <h1 class="relative z-10 text-center mt-4 font-mono font-semibold text-gray-500 bg-gray-700 text-3xl p-2 w-full">
+                    {title}
+                  </h1>
+                </a>
+              );
+            })
+        }
+      </div>
+    </section>
+  </main>
 </Layout>
