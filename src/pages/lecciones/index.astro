@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { render } from "astro:content";
 import { getCollection } from "astro:content";
 
 const clasesInfo = await getCollection("clasesInfo");
@@ -34,9 +33,7 @@ export const prerender = true;
       </article>
     </section>
     <section class="w-full flex justify-center mt-10">
-      <div
-        class="flex flex-wrap items-center max-w-[700px] justify-center gap-5"
-      >
+      <div class="flex flex-wrap items-start max-w-[700px] justify-center gap-5">
         {
           clasesInfo
             .sort((a, b) => a.data.id - b.data.id)
@@ -44,23 +41,29 @@ export const prerender = true;
               const { slug, data } = clase;
               const { title, description } = data;
               return (
-                <a
-                  href={`/lecciones/${slug}`}
-                  class="border-gray-500 border-2 w-[250px] h-[250px] flex items-center justify-center relative overflow-hidden  rounded-md"
-                >
-                  <img
-                    src={`/images/${slug}.webp`}
-                    class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 ease-in-out hover:scale-110"
-                    alt="Imagen de la clase de japonés"
-                  />
-                  <h1 class="relative z-10 text-center mt-4 font-mono font-semibold text-gray-500 bg-gray-700 text-3xl p-2 w-full">
-                    {title}
-                  </h1>
-                </a>
+                <div class="flex flex-col gap-2 min-h-[320px]">
+                  <a
+                    href={`/lecciones/${slug}`}
+                    class="border-gray-500 border-2 w-[250px] h-[250px] flex items-center justify-center relative overflow-hidden rounded-md"
+                  >
+                    <img
+                      src={`/images/${slug}.webp`}
+                      class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 ease-in-out hover:scale-110"
+                      alt="Imagen de la clase de japonés"
+                    />
+                    <h1 class="relative z-10 text-center font-mono font-semibold text-gray-500 bg-gray-700 text-3xl p-2 w-full min-h-[60px] flex items-center justify-center">
+                      {title}
+                    </h1>
+                  </a>
+                  <p class="w-[250px] text-center font-mono font-bold text-gray-600 flex-grow">
+                    {description}
+                  </p>
+                </div>
               );
             })
         }
       </div>
+      
     </section>
   </main>
 </Layout>
