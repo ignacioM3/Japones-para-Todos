@@ -9,6 +9,17 @@ const clasesInfo = defineCollection({
     })
 })
 
+const clases = defineCollection({
+    schema: z.object({
+        id: z.number(),
+        title: z.string(),
+        description: z.string(),
+        subtitle: z.string(),
+        descriptionSubtitle: z.string()
+    })
+})
+
 export const collections = {
-    clasesInfo
+    clasesInfo,
+    clases
 }

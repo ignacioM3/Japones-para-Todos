@@ -1,8 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Aside from "@/components/Aside.astro";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
 
 export const prerender = true;
+
 ---
 
 <Layout title={"Clase 0 - Curso de Japonés"}>
@@ -17,7 +20,7 @@ export const prerender = true;
           palabras con sus respectivos Kanji(Otro Sistema de Escritura)
         </p>
       </section>
-      <section class="mt-10 max-w-[700px] w-full">
+      <section class="mt-10 max-w-[700px] w-full" id="introduccion-hiragana">
         <h2 class="text-center font-semibold text-mono text-gray-500 text-2xl">
           Introducción a Hiragana
         </h2>
@@ -26,37 +29,6 @@ export const prerender = true;
           representa una sílaba en lugar de un sonido individual como en el
           alfabeto latino.
         </p>
-        <h3
-          class="text-center font-semibold text-mono text-gray-500 text-xl my-5"
-        >
-          A I U E O
-        </h3>
-        <img
-          src="/images/hiragana-1.webp"
-          alt="Hiragana - Letras Japonesas"
-          class="max-w-[70%] mx-auto rounded-md cursor-pointer"
-        />
-        <div class="w-[70%] mx-auto mt-5 font-mono">
-          <p class="mb-5">
-            Las Primeras letras son (En azul su pronunciación). A Diferencia del
-            Español el orden de las silabas es distinto:
-          </p>
-          <p>
-            あ -<span class="font-bold text-blue-500"> A</span>
-          </p>
-          <p>
-            い -<span class="font-bold text-blue-500"> I</span>
-          </p>
-          <p>
-            う -<span class="font-bold text-blue-500"> U</span>
-          </p>
-          <p>
-            え -<span class="font-bold text-blue-500"> E</span>
-          </p>
-          <p>
-            お -<span class="font-bold text-blue-500"> O</span>
-          </p>
-        </div>
 
         <h3
           class="text-center font-semibold text-mono text-gray-500 text-xl my-5"
@@ -245,7 +217,9 @@ export const prerender = true;
         />
         <div class="w-[70%] mx-auto mt-5 font-mono">
           <p class="mb-5">
-           En esta caso tenemos otras expeciones pero su pronunciación lo mas similar al español es en el caso de Ya(や) es IA y asi con las otras(En rojo su pronunciación):
+            En esta caso tenemos otras expeciones pero su pronunciación lo mas
+            similar al español es en el caso de Ya(や) es IA y asi con las
+            otras(En rojo su pronunciación):
           </p>
           <p>
             や -<span class="font-bold text-red-500"> IA</span>
@@ -303,6 +277,150 @@ export const prerender = true;
           </p>
           <p>
             を -<span class="font-bold text-blue-500"> WO</span>
+          </p>
+        </div>
+        <h3
+          class="text-center font-semibold text-mono text-gray-500 text-2xl my-5"
+        >
+          Tenten <span class="font-bold text-black">゛</span> y Maru <span
+            class="font-bold text-black">°</span
+          >
+        </h3>
+        <p class="font-mono w-[70%] mx-auto">
+          Ahora tenemos tenten ゛ y maru ° se usan en hiragana como en katakana
+          para cambiar el sonido de pronunciación
+        </p>
+        <h3
+          class="text-center font-semibold text-mono text-gray-500 text-xl my-5"
+        >
+          GA GI GU GE GO
+        </h3>
+        <img
+          src="/images/hiragana-11.webp"
+          alt="Hiragana - Letras Japonesas"
+          class="max-w-[70%] mx-auto rounded-md cursor-pointer"
+        />
+        <div class="w-[70%] mx-auto mt-5 font-mono">
+          <p class="mb-5">
+            Acá tenemos la utilización de ゛para cambiar el sonido de la fila de
+            la <span class="font-bold text-green-400">K</span> por la <span
+              class="font-bold text-green-500">G</span
+            >
+          </p>
+          <p>
+            が -<span class="font-bold text-blue-500"> GA</span>
+          </p>
+          <p>
+            ぎ -<span class="font-bold text-blue-500"> GI</span>
+          </p>
+          <p>
+            ぐ -<span class="font-bold text-blue-500"> GU</span>
+          </p>
+          <p>
+            げ -<span class="font-bold text-blue-500"> GE</span>
+          </p>
+          <p>
+            ご -<span class="font-bold text-blue-500"> GO</span>
+          </p>
+        </div>
+        <h3
+          class="text-center font-semibold text-mono text-gray-500 text-xl my-5"
+        >
+          ZA JI ZU ZE ZO
+        </h3>
+        <img
+          src="/images/hiragana-12.webp"
+          alt="Hiragana - Letras Japonesas"
+          class="max-w-[70%] mx-auto rounded-md cursor-pointer"
+        />
+        <div class="w-[70%] mx-auto mt-5 font-mono">
+          <p class="mb-5">
+            Acá tenemos la utilización de ゛para cambiar el sonido de la fila de
+            la <span class="font-bold text-green-400">S</span> por la <span
+              class="font-bold text-green-500">Z</span
+            >
+            Pero tenemos una exepcion(En rojo su pronunciación)
+          </p>
+          <p>
+            ざ -<span class="font-bold text-blue-500"> ZA</span>
+          </p>
+          <p>
+            じ -<span class="font-bold text-red-400"> JI</span>
+          </p>
+          <p>
+            ず -<span class="font-bold text-blue-500"> ZU</span>
+          </p>
+          <p>
+            ぜ -<span class="font-bold text-blue-500"> ZE</span>
+          </p>
+          <p>
+            ぞ -<span class="font-bold text-blue-500"> ZO</span>
+          </p>
+        </div>
+        <h3
+          class="text-center font-semibold text-mono text-gray-500 text-xl my-5"
+        >
+          BA BI FU BE BO
+        </h3>
+        <img
+          src="/images/hiragana-13.webp"
+          alt="Hiragana - Letras Japonesas"
+          class="max-w-[70%] mx-auto rounded-md cursor-pointer"
+        />
+        <div class="w-[70%] mx-auto mt-5 font-mono">
+          <p class="mb-5">
+            Acá tenemos la utilización de ゛para cambiar el sonido de la fila de
+            la <span class="font-bold text-green-400">H</span> por la <span
+              class="font-bold text-green-500">B</span
+            >
+          </p>
+          <p>
+            ば -<span class="font-bold text-blue-500"> BA</span>
+          </p>
+          <p>
+            び -<span class="font-bold text-blue-500"> BI</span>
+          </p>
+          <p>
+            ぶ -<span class="font-bold text-blue-500"> BU</span>
+          </p>
+          <p>
+            べ -<span class="font-bold text-blue-500"> BE</span>
+          </p>
+          <p>
+            ぼ -<span class="font-bold text-blue-500"> BO</span>
+          </p>
+        </div>
+        <h3
+          class="text-center font-semibold text-mono text-gray-500 text-xl my-5"
+        >
+          PA PI PU PE PO
+        </h3>
+        <img
+          src="/images/hiragana-14.webp"
+          alt="Hiragana - Letras Japonesas"
+          class="max-w-[70%] mx-auto rounded-md cursor-pointer"
+        />
+        <div class="w-[70%] mx-auto mt-5 font-mono">
+          <p class="mb-5">
+            Acá tenemos la utilización de ° para cambiar el sonido de la fila de
+            la <span class="font-bold text-green-400">H</span> por la <span
+              class="font-bold text-green-500">P</span
+            >
+          </p>
+          <p>
+            ば -<span class="font-bold text-blue-500"> PA</span>
+          </p>
+          <p>
+            び -<span class="font-bold text-blue-500"> PI</span>
+          </p>
+          <p>
+            ぶ -<span class="font-bold text-blue-500"> PU</span>
+          </p>
+          <p>
+            べ -<span class="font-bold text-blue-500"> PE</span>
+          </p>
+          <p>
+            ぼ -<span class="font-bold text-blue-500"> PO</span>
           </p>
         </div>
       </section>
