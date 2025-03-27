@@ -18,7 +18,7 @@ export const prerender = true;
         Lecciones
       </h1>
       <hr class="w-30 mx-auto border-t-2 text-gray-500 mb-5" />
-      <article class="px-5 font-mono md:max-w-[450px] mx-auto">
+      <article class="px-5 font-mono md:max-w-[450px] mx-auto bg-gradient-to-r">
         <p class="mb-2">
           No te olvides que si no tienes conocimiento de Hiragana y Katakana ver
           la lección 0
@@ -41,14 +41,14 @@ export const prerender = true;
               const { slug, data } = clase;
               const { title, description } = data;
               return (
-                <div class="flex flex-col gap-2 min-h-[320px]">
+                <div class="flex flex-col gap-2 min-h-[320px] bg-gradient-to-r">
                   <a
                     href={`/lecciones/${slug}`}
-                    class="border-gray-500 border-2 w-[250px] h-[250px] flex items-center justify-center relative overflow-hidden rounded-md"
+                    class="border-gray-500 border-2 shadow-xl w-[250px] h-[250px] flex items-center justify-center relative overflow-hidden rounded-md"
                   >
                     <img
                       src={`/images/${slug}.webp`}
-                      class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 ease-in-out hover:scale-110"
+                      class="absolute shadow-xl inset-0 w-full h-full object-cover opacity-60 transition-transform duration-300 ease-in-out hover:scale-110"
                       alt="Imagen de la clase de japonés"
                     />
                     <h1 class="relative z-10 text-center font-mono font-semibold text-gray-500 bg-gray-700 text-3xl p-2 w-full min-h-[60px] flex items-center justify-center">
