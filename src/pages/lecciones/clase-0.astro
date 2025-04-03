@@ -1,18 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Aside from "@/components/Aside.astro";
-import { getCollection } from "astro:content";
-import { render } from "astro:content";
-
-export const prerender = true;
-
 ---
 
 <Layout title={"Clase 0 - Curso de Japonés"}>
-  <main class="flex min-h-screen w-screen">
+  <main class="flex flex-col md:flex-row min-h-screen w-screen">
     <Aside />
     <div class="mb-30">
-      <section class="mt-30 max-w-[700px] w-full">
+      <section class="mt-38 md:mt-30 max-w-[700px] w-full">
         <h1 class="text-center text-3xl font-bold text-gray-500">Clase - 0</h1>
         <p class="font-mono mt-10 w-[70%] mx-auto">
           En esta clase aprenderemos dos de los 3 sistemas de escritura del
@@ -428,6 +423,9 @@ export const prerender = true;
         <h2 class="text-center font-semibold text-mono text-gray-500 text-2xl">
           Introducción a Katakana
         </h2>
+        <p class="font-mono mt-5 w-[70%] mx-auto">
+          Al igual que katakana se trata de un silabario, lo que significa que cada carácter representa una sílaba. Se utiliza principalmente para escribir palabras de origen extranjero, nombres propios extranjeros, nombres de empresas y onomatopeyas.
+        </p>
       </section>
     </div>
   </main>

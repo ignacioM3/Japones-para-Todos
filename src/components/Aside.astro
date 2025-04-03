@@ -1,8 +1,9 @@
 ---
+
 ---
 
 <aside
-  class=" hidden md:flex justify-end h-screen w-[30%] sticky top-0 overflow-auto"
+  class="hidden md:flex justify-end h-screen w-[30%] sticky top-0 overflow-auto"
 >
   <div class="flex flex-col items-end max-w-[250px] w-full mt-40">
     <a
@@ -12,22 +13,44 @@
       A <span>Introducción a Hiragana</span>
     </a>
     <a
+      href="#introduccion-hiragana"
+      class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
+    >
+      B <span>Vocabulario - Hiragana</span>
+    </a>
+    <a
       href="#introduccion-katakana"
       class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
     >
-      B <span>Introducción a Katakana</span>
+      C <span>Introducción a Katakana</span>
     </a>
     <a
       href="#tarea-hiragana"
       class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
     >
-      C <span>Tarea Hiragana</span>
+      D <span>Tarea Hiragana</span>
     </a>
     <a
       href="#tarea-katakana"
       class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
     >
-      D <span>Tarea Katakana</span>
+      E <span>Tarea Katakana</span>
     </a>
   </div>
 </aside>
+<aside class="bg-white text-gray-500 font-mono font-bold  fixed md:hidden mt-21 z-[101] w-full flex justify-center items-center shadow-md rounded-b-md">
+  <select id="tema" class="bg-white text-center w-full p-2.5">
+    <option value="" class="text-start font-mono text-gray-500 font-bol">Selecciona una sección</option>
+    <option value="#introduccion-hiragana" class="text-start font-mono text-gray-500 font-bol">A Introducción a Hiragana</option>
+    <option value="#vocabulario-hiragana" class="text-start font-mono text-gray-500 font-bol">B Vocabulario - Hiragana</option>
+    <option value="#introduccion-katakana" class="text-start font-mono text-gray-500 font-bol">C Introducción a Katakana</option>
+    <option value="#tarea-hiragana" class="text-start font-mono text-gray-500 font-bol">D Tarea Hiragana</option>
+    <option value="#tarea-katakana" class="text-start font-mono text-gray-500 font-bol">E Tarea Katakana</option>
+  </select>
+  <slot/>
+</aside>
+
+
+
+
+
