@@ -38,19 +38,54 @@
     </a>
   </div>
 </aside>
-<aside class="bg-white text-gray-500 font-mono font-bold  fixed md:hidden mt-21 z-[101] w-full flex justify-center items-center shadow-md rounded-b-md">
+<aside class="bg-white text-gray-500 font-mono font-bold fixed md:hidden mt-21 z-[101] w-full flex justify-center items-center shadow-md rounded-b-md">
   <select id="tema" class="bg-white text-center w-full p-2.5">
-    <option value="" class="text-start font-mono text-gray-500 font-bol">Selecciona una sección</option>
-    <option value="#introduccion-hiragana" class="text-start font-mono text-gray-500 font-bol">A Introducción a Hiragana</option>
-    <option value="#vocabulario-hiragana" class="text-start font-mono text-gray-500 font-bol">B Vocabulario - Hiragana</option>
-    <option value="#introduccion-katakana" class="text-start font-mono text-gray-500 font-bol">C Introducción a Katakana</option>
-    <option value="#tarea-hiragana" class="text-start font-mono text-gray-500 font-bol">D Tarea Hiragana</option>
-    <option value="#tarea-katakana" class="text-start font-mono text-gray-500 font-bol">E Tarea Katakana</option>
+    <option value="">Selecciona una sección</option>
+    <option value="#introduccion-hiragana">A Introducción a Hiragana</option>
+    <option value="#vocabulario-hiragana">B Vocabulario - Hiragana</option>
+    <option value="#introduccion-katakana">C Introducción a Katakana</option>
+    <option value="#tarea-hiragana">D Tarea Hiragana</option>
+    <option value="#tarea-katakana">E Tarea Katakana</option>
   </select>
-  <slot/>
 </aside>
 
-
-
-
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+   const select = document.getElementById('tema')　as HTMLSelectElement;;
+   
+   if (select) {
+     // Sincronizar select con el hash inicial
+     select.value = window.location.hash;
+ 
+     // Actualizar select cuando cambia el hash (p.ej. navegación manual)
+     window.addEventListener('hashchange', () => {
+       select.value = window.location.hash;
+     });
+ 
+     // Resetear valor al enfocar para permitir re-selección
+     select.addEventListener('focus', () => {
+       select.value = '';
+     });
+ 
+     // Restaurar valor al perder el foco
+     select.addEventListener('blur', () => {
+       select.value = window.location.hash;
+     });
+ 
+     // Manejar la navegación
+     select.addEventListener('change', (e) => {
+       const target = e.target as HTMLSelectElement;
+       const value = target.value;
+       
+       if (value) {
+         const section = document.querySelector(value);
+         if (section) {
+           section.scrollIntoView({ behavior: 'smooth' });
+           window.location.hash = value;
+         }
+       }
+     });
+   }
+ });
+ </script>
 

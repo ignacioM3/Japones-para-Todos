@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Burger } from "./Burger";
+import { Burger } from "./Burger.tsx";
 
 
 export default function Header() {
