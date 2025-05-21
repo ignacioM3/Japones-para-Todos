@@ -1,0 +1,38 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Aside from "@/components/Aside.astro";
+import ParticulaHa from "@/components/lecciones/clase01/Particula-ha.astro";
+import Title from "@/components/styles/Title.astro";
+import MainContainer from "@/components/styles/MainContainer.astro";
+
+const secciones = [
+  { id: "particula-は", label: "A", title: "Particula は y です" },
+  { id: "forma-negativa", label: "B", title: "Forma negativa del です" },
+  { id: "particula-か", label: "C", title: "Particula か" },
+  { id: "particula-も", label: "D", title: "Particula も" },
+  { id: "uso-の", label: "E", title: "Uso del の y さん" },
+  { id: "vocabulario", label: "F", title: "Vocabulario" },
+  { id: "Tarea", label: "G", title: "Tarea" },
+  { id: "Ejercicios", label: "H", title: "Ejercicios" },
+];
+---
+
+<Layout title="Clase 1 - Curso de Japonés">
+  <MainContainer>
+    <Aside sections={secciones} />
+    <div class="mb-30">
+      <section class="mt-38 md:mt-30 max-w-[700px] w-full">
+        <h1 class="text-center text-3xl font-bold text-gray-500">Clase - 1</h1>
+        <p class="font-mono mt-10 w-[70%] mx-auto">
+          En esta clase empezaremos a aprender gramatica basica y esencial del
+          idioma japonés. Como foco principal el uso de la particula は y です.
+          Las clases constaran de varias partes, en la primera parte
+          aprenderemos vocabulario y gramática, en la segunda parte todo el
+          vocabulario visto mas nuevo y en las ultima parte ejercicios mas tarea
+          para realizar.
+        </p>
+      </section>
+      <ParticulaHa />
+    </div>
+  </MainContainer>
+</Layout>

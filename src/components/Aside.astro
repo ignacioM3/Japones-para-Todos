@@ -1,98 +1,66 @@
 ---
+interface Section {
+  id: string;
+  label: string;
+  title: string;
+}
 
+const { sections } = Astro.props;
 ---
 
-<aside
-  class="hidden md:flex justify-end h-screen w-[30%] sticky top-0 overflow-auto"
->
+<aside class="hidden md:flex justify-end h-screen w-[30%] sticky top-0 overflow-auto">
   <div class="flex flex-col items-end max-w-[250px] w-full mt-40">
-    <a
-      href="#introduccion-hiragana"
-      class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
-    >
-      A <span>Introducción a Hiragana</span>
-    </a>
-    <a
-      href="#vocabulario-hiragana"
-      class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
-    >
-      B <span>Vocabulario - Hiragana</span>
-    </a>
-    <a
-      href="#tarea-hiragana"
-      class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
-    >
-      C <span>Tarea a Hiragana</span>
-    </a>
-    <a
-      href="#introduccion-hiragana"
-      class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
-    >
-      D <span>Introducción Hiragana</span>
-    </a>
-    <a
-      href="#vocabulario-katakana"
-      class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
-    >
-      E <span>Vocabulario Katakana</span>
-    </a>
-    <a
-    href="#tarea-katakana"
-    class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
-  >
-    F <span>Tarea Katakana</span>
-  </a>
+    {sections.map((section: Section) => (
+      <a
+        href={`#${section.id}`}
+        class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
+      >
+        {section.label} <span>{section.title}</span>
+      </a>
+    ))}
   </div>
 </aside>
+
 <aside class="bg-white text-gray-500 font-mono font-bold fixed md:hidden mt-21 z-[101] w-full flex justify-center items-center shadow-md rounded-b-md">
   <select id="tema" class="bg-white text-center w-full p-2.5">
     <option value="">Selecciona una sección</option>
-    <option value="#introduccion-hiragana">A Introducción a Hiragana</option>
-    <option value="#vocabulario-hiragana">B Vocabulario - Hiragana</option>
-    <option value="#tarea-hiragana">C Tarea Hiragana</option>
-    <option value="#introduccion-katakana">D Introducción a Katakana</option>
-    <option value="#vocabulario-hiragana">E Vocabulario Katakana</option>
-    <option value="#tarea-katakana">F Tarea Katakana</option>
+    {sections.map((section: Section) => (
+      <option value={`#${section.id}`}>
+        {section.label} {section.title}
+      </option>
+    ))}
   </select>
 </aside>
 
-<script>
+<script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-   const select = document.getElementById('tema')　as HTMLSelectElement;;
-   
-   if (select) {
-     // Sincronizar select con el hash inicial
-     select.value = window.location.hash;
- 
-     // Actualizar select cuando cambia el hash (p.ej. navegación manual)
-     window.addEventListener('hashchange', () => {
-       select.value = window.location.hash;
-     });
- 
-     // Resetear valor al enfocar para permitir re-selección
-     select.addEventListener('focus', () => {
-       select.value = '';
-     });
- 
-     // Restaurar valor al perder el foco
-     select.addEventListener('blur', () => {
-       select.value = window.location.hash;
-     });
- 
-     // Manejar la navegación
-     select.addEventListener('change', (e) => {
-       const target = e.target as HTMLSelectElement;
-       const value = target.value;
-       
-       if (value) {
-         const section = document.querySelector(value);
-         if (section) {
-           section.scrollIntoView({ behavior: 'smooth' });
-           window.location.hash = value;
-         }
-       }
-     });
-   }
- });
- </script>
+    const select = document.getElementById('tema');
 
+    if (select) {
+      select.value = window.location.hash;
+
+      window.addEventListener('hashchange', () => {
+        select.value = window.location.hash;
+      });
+
+      select.addEventListener('focus', () => {
+        select.value = '';
+      });
+
+      select.addEventListener('blur', () => {
+        select.value = window.location.hash;
+      });
+
+      select.addEventListener('change', (e) => {
+        const value = e.target.value;
+        if (value) {
+          const section = document.querySelector(value);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+            window.location.hash = value;
+          }
+        }
+      });
+    }
+  });
+</script>

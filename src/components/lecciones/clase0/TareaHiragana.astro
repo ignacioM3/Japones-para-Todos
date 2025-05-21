@@ -1,4 +1,6 @@
 ---
+import TextIntro from "@/components/styles/TextIntro.astro";
+import Title from "@/components/styles/Title.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -6,13 +8,14 @@ import { Icon } from "astro-icon/components";
   id="tarea-hiragana"
   class="mt-10 max-w-[700px] w-full scroll-mt-[130px] md:scroll-mt-23"
 >
-  <h2 class="text-center font-semibold text-mono text-gray-500 text-2xl mt-8">
+  <Title className="mt-8">
     Tarea Hiragana
-  </h2>
-  <p class="font-mono mt-5 w-[70%] mx-auto">
+  </Title>
+
+  <TextIntro>
     Es importante que hagamos la secciones de la tarea para reforzar todo lo que
     vayamos viendo a lo largo del curso.
-  </p>
+  </TextIntro>
   <ol class="font-mono mt-5 w-[70%] mx-auto">
     <li>
       <span class="font-bold">1 - </span>Repetir en papel aunque sea 10 veces

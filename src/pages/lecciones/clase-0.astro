@@ -4,11 +4,22 @@ import Aside from "@/components/Aside.astro";
 import HiraganaIntro from "@/components/lecciones/clase0/HiraganaIntro.astro";
 import VocabularioHiragana from "@/components/lecciones/clase0/VocabularioHiragana.astro";
 import TareaHiragana from "@/components/lecciones/clase0/TareaHiragana.astro";
+import MainContainer from "@/components/styles/MainContainer.astro";
+import TextIntro from "@/components/styles/TextIntro.astro";
+
+const secciones = [
+  { id: "introduccion-hiragana", label: "A", title: "Introducción a Hiragana" },
+  { id: "vocabulario-hiragana", label: "B", title: "Vocabulario - Hiragana" },
+  { id: "tarea-hiragana", label: "C", title: "Tarea Hiragana" },
+  { id: "introduccion-katakana", label: "D", title: "Introducción a Katakana" },
+  { id: "vocabulario-katakana", label: "E", title: "Vocabulario Katakana" },
+  { id: "tarea-katakana", label: "F", title: "Tarea Katakana" },
+];
 ---
 
 <Layout title={"Clase 0 - Curso de Japonés"}>
-  <main class="flex flex-col md:flex-row min-h-screen w-screen">
-    <Aside />
+  <MainContainer>
+    <Aside sections={secciones} />
     <div class="mb-30">
       <section class="mt-38 md:mt-30 max-w-[700px] w-full">
         <h1 class="text-center text-3xl font-bold text-gray-500">Clase - 0</h1>
@@ -21,14 +32,21 @@ import TareaHiragana from "@/components/lecciones/clase0/TareaHiragana.astro";
       <HiraganaIntro />
       <VocabularioHiragana />
       <TareaHiragana />
-      <section class="mt-10 max-w-[700px] w-full scroll-mt-23" id="introduccion-katakana">
+      <section
+        class="mt-10 max-w-[700px] w-full scroll-mt-23"
+        id="introduccion-katakana"
+      >
         <h2 class="text-center font-semibold text-mono text-gray-500 text-2xl">
           Introducción a Katakana
         </h2>
-        <p class="font-mono mt-5 w-[70%] mx-auto">
-          Al igual que katakana se trata de un silabario, lo que significa que cada carácter representa una sílaba. Se utiliza principalmente para escribir palabras de origen extranjero, nombres propios extranjeros, nombres de empresas y onomatopeyas.
-        </p>
+
+        <TextIntro>
+          Al igual que katakana se trata de un silabario, lo que significa que
+          cada carácter representa una sílaba. Se utiliza principalmente para
+          escribir palabras de origen extranjero, nombres propios extranjeros,
+          nombres de empresas y onomatopeyas.
+        </TextIntro>
       </section>
     </div>
-  </main>
+  </MainContainer>
 </Layout>

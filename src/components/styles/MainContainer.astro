@@ -1,0 +1,7 @@
+---
+const {className =""} = Astro.props;
+---
+
+<main class={`flex flex-col md:flex-row min-h-screen w-screen ${className}`}>
+    <slot />
+</main>
