@@ -23,7 +23,7 @@ const secciones = [
     <div class="mb-30">
       <section class="mt-38 md:mt-30 max-w-[700px] w-full">
         <h1 class="text-center text-3xl font-bold text-gray-500">Clase - 1</h1>
-        <p class="font-mono mt-10 w-[70%] mx-auto">
+        <p class="font-mono mt-10 w-[80%] md:w-[70%] mx-auto">
           En esta clase empezaremos a aprender gramatica basica y esencial del
           idioma japonés. Como foco principal el uso de la particula は y です.
           Las clases constaran de varias partes, en la primera parte
@@ -36,3 +36,16 @@ const secciones = [
     </div>
   </MainContainer>
 </Layout>
+
+
+<script>
+  const audioElements = document.querySelectorAll("[data-audio]");
+
+  audioElements.forEach((element) => {
+    element.addEventListener("click", () => {
+      const audioSrc = element.getAttribute("data-audio");
+      const audio = new Audio(audioSrc!);
+      audio.play();
+    });
+  });
+</script>
