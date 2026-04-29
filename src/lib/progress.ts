@@ -1,4 +1,10 @@
-export type LessonStatus = "locked" | "unlocked" | "completed";
+export type LessonStatus = "locked" | "available" | "completed";
+export const LessonStatus = {
+  Locked: "locked" as LessonStatus,
+  Available: "available" as LessonStatus,
+  Completed: "completed" as LessonStatus,
+}
+
 
 export interface LessonProgress {
   id: string;

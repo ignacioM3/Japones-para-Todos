@@ -1,5 +1,4 @@
 ---
-import SectionContainer from "../../../../components/styles/SectionContainer.astro";
 import TextIntro from "../../../../components/styles/TextIntro.astro";
 import { Icon } from "astro-icon/components";
 import Layout from "../../../../layouts/Layout.astro";
@@ -110,6 +109,7 @@ import { seccionesClase0 } from "../../../../lib/lessons";
                     </a>
                     <a
                         href="/lecciones/clase-0/katakana/intro"
+                        id="complete-btn"
                         class="mx-auto my-10 block w-max px-10 md:px-15 py-2 bg-green-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-green-600"
                     >
                         Siguiente
@@ -118,58 +118,11 @@ import { seccionesClase0 } from "../../../../lib/lessons";
         </div>
     </MainContainer>
 </Layout>
-<script is:inline>
-    const KEY = "jp-course-progress";
 
-    function getProgress() {
-        const data = localStorage.getItem(KEY);
 
-        if (!data) {
-            const lessons = [
-                "hiragana-intro",
-                "hiragana-vocab",
-                "hiragana-task",
-                "katakana-intro",
-                "katakana-vocab",
-                "katakana-task",
-            ];
 
-            const initial = lessons.map((id, i) => ({
-                id,
-                status: i === 0 ? "unlocked" : "locked",
-            }));
+<script type="module">
+  import { initCompleteButton } from "/src/scripts/progressClient.ts";
 
-            localStorage.setItem(KEY, JSON.stringify(initial));
-            return initial;
-        }
-
-        return JSON.parse(data);
-    }
-
-    function completeLesson(id) {
-        const progress = getProgress();
-
-        const index = progress.findIndex((l) => l.id === id);
-        if (index === -1) return;
-
-        progress[index].status = "completed";
-
-        if (progress[index + 1]) {
-            progress[index + 1].status = "unlocked";
-        }
-
-        localStorage.setItem(KEY, JSON.stringify(progress));
-    }
-
-    document
-        .getElementById("complete-hiragana-task")
-        ?.addEventListener("click", () => {
-            completeLesson("hiragana-task");
-
-            alert("Lección completada 🎉");
-
-            setTimeout(() => {
-                window.location.reload();
-            }, 500);
-        });
+  initCompleteButton("complete-btn", "hiragana-task");
 </script>

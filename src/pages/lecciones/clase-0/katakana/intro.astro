@@ -277,6 +277,7 @@ const katakanaData3 = sorted[2];
             </a>
             <a
                 href="/lecciones/clase-0/katakana/vocabulario"
+                id="complete-btn"
                 class="mx-auto my-10 block w-max px-10 md:px-15 py-2 bg-green-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-green-600"
             >
                 Siguiente
@@ -287,14 +288,8 @@ const katakanaData3 = sorted[2];
 </Layout>
 
 
-<script>
-    const audioElements = document.querySelectorAll("[data-audio]");
+<script type="module">
+  import { initCompleteButton } from "/src/scripts/progressClient.ts";
 
-    audioElements.forEach((element) => {
-        element.addEventListener("click", () => {
-            const audioSrc = element.getAttribute("data-audio");
-            const audio = new Audio(audioSrc!);
-            audio.play();
-        });
-    });
+  initCompleteButton("complete-btn", "katakana-intro");
 </script>

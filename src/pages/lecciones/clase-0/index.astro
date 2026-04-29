@@ -2,21 +2,12 @@
 import MainContainer from "../../../components/styles/MainContainer.astro";
 import Aside from "../../../components/utils/Aside.astro";
 import Layout from "../../../layouts/Layout.astro";
-import { lessons } from "../../../lib/lessons";
-
-
-
-const secciones = lessons.map((l, i) => ({
-  id: l.id,
-  label: String.fromCharCode(65 + i), // A, B, C...
-  title: l.title,
-  path: l.path
-}));
+import { seccionesClase0 } from "../../../lib/lessons";
 ---
 
 <Layout title={"Clase 0 - Curso de Japonés"}>
   <MainContainer>
-    <Aside sections={secciones} />
+    <Aside sections={seccionesClase0} />
     <div class="mb-30">
       <section class="mt-38 md:mt-30 max-w-175 w-full mx-auto text-center">
 

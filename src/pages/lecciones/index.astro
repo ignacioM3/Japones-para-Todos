@@ -4,8 +4,10 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import NotifyButton from "../../components/utils/NotifyButton";
 import ProgressBar from "../../components/styles/ProgressBar.astro";
 
+
 const clasesInfo = await getCollection("clasesInfo") as CollectionEntry<"clasesInfo">[];
 export const prerender = true;
+
 ---
 
 <Layout title="Lecciones de japonés">

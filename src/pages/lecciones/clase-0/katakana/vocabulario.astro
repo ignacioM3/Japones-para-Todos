@@ -93,6 +93,7 @@ import MainContainer from "../../../../components/styles/MainContainer.astro";
             </a>
             <a
                 href="/lecciones/clase-0/katakana/tarea"
+                id="complete-btn"
                 class="mx-auto my-10 block w-max px-10 md:px-15 py-2 bg-green-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-green-600"
             >
                 Siguiente
@@ -112,4 +113,11 @@ import MainContainer from "../../../../components/styles/MainContainer.astro";
             audio.play();
         });
     });
+</script>
+
+
+<script type="module">
+  import { initCompleteButton } from "/src/scripts/progressClient.ts";
+
+  initCompleteButton("complete-btn", "katakana-vocab");
 </script>
