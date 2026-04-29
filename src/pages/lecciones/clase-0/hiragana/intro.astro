@@ -1,5 +1,4 @@
 ---
-import SectionContainer from "../../../../components/styles/SectionContainer.astro";
 import TextIntro from "../../../../components/styles/TextIntro.astro";
 import { Icon } from "astro-icon/components";
 import KanaGroup from "../../../../components/utils/KanaGroup.astro";
@@ -7,7 +6,7 @@ import KanaCard from "../../../../components/utils/KanaCard.astro";
 import { getCollection } from "astro:content";
 import Layout from "../../../../layouts/Layout.astro";
 import MainContainer from "../../../../components/styles/MainContainer.astro";
-import { lessons, seccionesClase0 } from "../../../../lib/lessons";
+import { seccionesClase0 } from "../../../../lib/lessons";
 import Aside from "../../../../components/utils/Aside.astro";
 const hiragana = await getCollection("hiragana");
 
@@ -398,3 +397,16 @@ const hiraganaData3 = sorted[2];
         </div>
     </MainContainer>
 </Layout>
+
+
+<script>
+    const audioElements = document.querySelectorAll("[data-audio]");
+
+    audioElements.forEach((element) => {
+        element.addEventListener("click", () => {
+            const audioSrc = element.getAttribute("data-audio");
+            const audio = new Audio(audioSrc!);
+            audio.play();
+        });
+    });
+</script>
