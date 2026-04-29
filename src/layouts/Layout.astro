@@ -5,7 +5,7 @@ const { title = "Japones Para Todos" } = Astro.props;
 import Header from "../components/utils/Header";
 ---
 
-<script type="module" src="/src/utils/audio-init.ts"></script>
+<script type="module" src="../utils/audio-init.ts"></script>
 
 <!doctype html>
 <html lang="es">
@@ -35,7 +35,7 @@ import Header from "../components/utils/Header";
 
 
 <script type="module">
-  import { initAsideProgress } from "/src/scripts/progressClient.ts";
+  import { initAsideProgress } from "../scripts/progressClient";
 
   initAsideProgress();
 </script>
