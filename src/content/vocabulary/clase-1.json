@@ -1,0 +1,41 @@
+{
+  "lesson": 0,
+  "title": "Vocabulario básico",
+  "vocabulary": [
+    {
+      "id": 1,
+      "word": "こんにちは",
+      "reading": "konnichiwa",
+      "meaning": "hola",
+      "type": "saludo"
+    },
+    {
+      "id": 2,
+      "word": "ありがとう",
+      "reading": "arigatou",
+      "meaning": "gracias",
+      "type": "expresión"
+    },
+    {
+      "id": 3,
+      "word": "はい",
+      "reading": "hai",
+      "meaning": "sí",
+      "type": "respuesta"
+    },
+    {
+      "id": 4,
+      "word": "いいえ",
+      "reading": "iie",
+      "meaning": "no",
+      "type": "respuesta"
+    },
+    {
+      "id": 5,
+      "word": "さようなら",
+      "reading": "sayounara",
+      "meaning": "adiós",
+      "type": "saludo"
+    }
+  ]
+}

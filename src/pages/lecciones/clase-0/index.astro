@@ -1,0 +1,44 @@
+---
+import MainContainer from "../../../components/styles/MainContainer.astro";
+import Aside from "../../../components/utils/Aside.astro";
+import Layout from "../../../layouts/Layout.astro";
+import { lessons } from "../../../lib/lessons";
+
+
+
+const secciones = lessons.map((l, i) => ({
+  id: l.id,
+  label: String.fromCharCode(65 + i), // A, B, C...
+  title: l.title,
+  path: l.path
+}));
+---
+
+<Layout title={"Clase 0 - Curso de Japonés"}>
+  <MainContainer>
+    <Aside sections={secciones} />
+    <div class="mb-30">
+      <section class="mt-38 md:mt-30 max-w-175 w-full mx-auto text-center">
+
+        <h1 class="text-4xl font-bold text-gray-600 mt-1">Lección - 0</h1>
+
+        <div class="w-16 h-0.5 bg-theme-red mx-auto mt-4"></div>
+
+        <p
+          class="font-mono text-gray-600 mt-8 leading-relaxed max-w-130 mx-auto"
+        >
+          En esta clase aprenderemos dos de los tres sistemas de escritura del
+          japonés:
+          <strong>Hiragana</strong> y <strong>Katakana</strong>. Más adelante
+          también veremos palabras con sus respectivos
+          <strong>Kanji</strong>, el tercer sistema de escritura.
+        </p>
+      </section>
+      <a href="/lecciones/clase-0/hiragana/intro" class="mx-auto mt-10 block w-max px-20 py-2 bg-green-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-green-600">
+       Comenzar
+      </a>
+    </div>
+  </MainContainer>
+</Layout>
+
+

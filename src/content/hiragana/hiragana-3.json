@@ -1,0 +1,77 @@
+[
+    {
+    "kana": [
+      { "kana": "きゃ", "isException": false, "romaji": "KYA" },
+      { "kana": "きゅ", "isException": false, "romaji": "KYU" },
+      { "kana": "きょ", "isException": false, "romaji": "KYO" },
+      { "kana": "ぎゃ", "isException": false, "romaji": "GYA" },
+      { "kana": "ぎゅ", "isException": false, "romaji": "GYU" },
+      { "kana": "ぎょ", "isException": false, "romaji": "GYO" }
+    ],
+    "subTitle": "KYA KYU KYO GYA GYU GYO",
+    "title": "fila de la k y g",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la K por la G"
+  },
+  {
+    "kana": [
+      { "kana": "りゃ", "isException": false, "romaji": "RYA" },
+      { "kana": "りゅ", "isException": false, "romaji": "RYU" },
+      { "kana": "りょ", "isException": false, "romaji": "RYO" },
+      { "kana": "みゃ", "isException": false, "romaji": "MYA" },
+      { "kana": "みゅ", "isException": false, "romaji": "MYU" },
+      { "kana": "みょ", "isException": false, "romaji": "MYO" }
+    ],
+    "subTitle": "RYA RYU RYO MYA MYU MYO",
+    "title": "fila de la R y M",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la R por la M"
+  },
+  {
+    "kana": [
+      { "kana": "ちゃ", "isException": false, "romaji": "CHA" },
+      { "kana": "ちゅ", "isException": false, "romaji": "CHU" },
+      { "kana": "ちょ", "isException": false, "romaji": "CHO" },
+      { "kana": "にゃ", "isException": false, "romaji": "NYA" },
+      { "kana": "にゅ", "isException": false, "romaji": "NYU" },
+      { "kana": "にょ", "isException": false, "romaji": "NYO" }
+    ],
+    "subTitle": "CHA CHU CHO NYA NYU NYO",
+    "title": "fila de la k y g",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la K por la G"
+  },
+  {
+    "kana": [
+      { "kana": "しゃ", "isException": false, "romaji": "SHA" },
+      { "kana": "しゅ", "isException": false, "romaji": "SHU" },
+      { "kana": "しょ", "isException": false, "romaji": "SHO" },
+      { "kana": "じゃ", "isException": false, "romaji": "JA" },
+      { "kana": "じゅ", "isException": false, "romaji": "JU" },
+      { "kana": "じょ", "isException": false, "romaji": "JO" }
+    ],
+    "subTitle": "SHA SHU SHO JA JU JO",
+    "title": "fila de la S y J",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la K por la G"
+  },
+  {
+    "kana": [
+      { "kana": "ひゃ", "isException": false, "romaji": "HYA" },
+      { "kana": "ひゅ", "isException": false, "romaji": "HYU" },
+      { "kana": "ひょ", "isException": false, "romaji": "HYO" },
+      { "kana": "ぴゃ", "isException": false, "romaji": "PYA" },
+      { "kana": "ぴゅ", "isException": false, "romaji": "PYU" },
+      { "kana": "ぴょ", "isException": false, "romaji": "PYO" }
+    ],
+    "subTitle": "HYA HYU HYO PYA PYU PYO",
+    "title": "fila de la k y g",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la K por la G"
+  },
+    {
+    "kana": [
+      { "kana": "びゃ", "isException": false, "romaji": "BYA" },
+      { "kana": "びゅ", "isException": false, "romaji": "BYU" },
+      { "kana": "びょ", "isException": false, "romaji": "BYO" }
+    ],
+    "subTitle": "BYA BYU BYO",
+    "title": "fila de la b",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la K por la G"
+  }
+]

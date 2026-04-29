@@ -1,0 +1,141 @@
+---
+import SectionContainer from "../../../components/styles/SectionContainer.astro";
+import TextIntro from "../../../components/styles/TextIntro.astro";
+import Title from "../../../components/styles/Title.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<SectionContainer id="tarea-hiragana">
+  <h2 class="text-center font-semibold text-gray-500 text-2xl">
+    Tarea Hiragana
+  </h2>
+
+  <TextIntro className="text-gray-600">
+    Practicar constantemente es clave. Estas tareas están pensadas para reforzar
+    lectura, escritura y pronunciación.
+  </TextIntro>
+
+  <div class="w-[90%] md:w-[70%] mx-auto space-y-6 mt-8">
+    <!-- 📝 Paso 1 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+      <h3 class="font-bold text-slate-800 mb-2">1. Escritura básica</h3>
+      <p class="text-sm text-gray-600 font-mono">
+        Repetí cada letra del hiragana al menos 10 veces en papel.
+      </p>
+    </div>
+
+    <!-- 🎵 Paso 2 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+      <h3 class="font-bold text-slate-800 mb-2">2. Práctica con canciones</h3>
+
+      <p class="text-sm text-gray-600 font-mono mb-4">
+        Escribí en hiragana partes de canciones. No importa la traducción,
+        enfocate en la escritura.
+      </p>
+
+      <div class="space-y-3">
+        <a
+          href="https://www.youtube.com/watch?v=855pQECcbxI"
+          target="_blank"
+          class="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-green-50 transition"
+        >
+          <span class="text-sm font-medium">
+            Sakura Anata ni Deaete Yokatta
+          </span>
+          <Icon name="heroicons:play" />
+        </a>
+
+        <a
+          href="https://www.youtube.com/watch?v=SJywJjwqIK8"
+          target="_blank"
+          class="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-green-50 transition"
+        >
+          <span class="text-sm font-medium"> Kimi ga Kureta Mono </span>
+          <Icon name="heroicons:play" />
+        </a>
+
+        <a
+          href="https://www.youtube.com/watch?v=JdSpuTi9d8A"
+          target="_blank"
+          class="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-green-50 transition"
+        >
+          <span class="text-sm font-medium">
+            Shigatsu wa Kimi no Uso Opening
+          </span>
+          <Icon name="heroicons:play" />
+        </a>
+      </div>
+    </div>
+
+    <!-- 🎤 Paso 3 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+      <h3 class="font-bold text-slate-800 mb-2">3. Lectura + pronunciación</h3>
+
+      <p class="text-sm text-gray-600 font-mono">
+        Intentá cantar leyendo lo que escribiste. Equivocarte es parte del
+        proceso: detectá errores y volvé a intentar.
+      </p>
+    </div>
+    <button
+      id="complete-hiragana-task"
+      class="mt-6 bg-green-500 text-white px-4 py-2 rounded mx-auto w-full cursor-pointer hover:bg-green-600 transition"
+    >
+      Completar
+    </button>
+  </div>
+</SectionContainer>
+<script is:inline>
+  const KEY = "jp-course-progress";
+
+  function getProgress() {
+    const data = localStorage.getItem(KEY);
+
+    if (!data) {
+      const lessons = [
+        "hiragana-intro",
+        "hiragana-vocab",
+        "hiragana-task",
+        "katakana-intro",
+        "katakana-vocab",
+        "katakana-task",
+      ];
+
+      const initial = lessons.map((id, i) => ({
+        id,
+        status: i === 0 ? "unlocked" : "locked",
+      }));
+
+      localStorage.setItem(KEY, JSON.stringify(initial));
+      return initial;
+    }
+
+    return JSON.parse(data);
+  }
+
+  function completeLesson(id) {
+    const progress = getProgress();
+
+    const index = progress.findIndex((l) => l.id === id);
+    if (index === -1) return;
+
+    progress[index].status = "completed";
+
+    if (progress[index + 1]) {
+      progress[index + 1].status = "unlocked";
+    }
+
+    localStorage.setItem(KEY, JSON.stringify(progress));
+  }
+
+  document
+    .getElementById("complete-hiragana-task")
+    ?.addEventListener("click", () => {
+      completeLesson("hiragana-task");
+
+      alert("Lección completada 🎉");
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    });
+</script>

@@ -1,0 +1,40 @@
+---
+interface Section {
+  id: string;
+  label: string;
+  title: string;
+  path: string;
+}
+
+const { sections } = Astro.props;
+---
+
+<aside class="hidden md:flex justify-end h-screen w-[30%] sticky top-0 overflow-auto">
+  <div class="flex flex-col items-end max-w-62.5 w-full mt-40">
+    {sections.map((section: Section) => (
+      <a
+        href={`/lecciones/clase-0/${section.path}`}
+        class="text-start p-2 hover:bg-blue-400 w-full rounded-sm transition-colors font-mono text-gray-500 font-bold hover:text-white"
+      >
+        {section.label} <span>{section.title}</span>
+      </a>
+    ))}
+  </div>
+</aside>
+
+<aside class="bg-white text-gray-500 font-mono font-bold fixed md:hidden mt-21 z-101 w-full flex justify-center items-center shadow-md rounded-b-md">
+  <select id="tema" class="bg-white text-center w-full p-2.5">
+    <option value="">Selecciona una sección</option>
+    {sections.map((section: Section) => (
+      <option value={`#${section.id}`}>
+        {section.label} {section.title}
+      </option>
+    ))}
+  </select>
+</aside>
+
+<script type="module">
+  import { initAsideProgress } from "/src/scripts/asideProgress.js";
+
+  initAsideProgress();
+</script>

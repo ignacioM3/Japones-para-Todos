@@ -1,0 +1,53 @@
+---
+// KanaCard.astro
+interface Props {
+  kana: string;
+  romaji: string;
+  isException?: boolean;
+}
+
+const { kana, romaji, isException = false } = Astro.props;
+const audioPath = `/audio/clase0/hiragana/${romaji.toLowerCase()}.mp3`;
+---
+
+<div
+  data-audio={audioPath}
+  class={`
+  flex flex-col cursor-pointer items-center justify-center p-4 rounded-2xl border-2 transition-all duration-300
+  ${
+    isException
+      ? "border-red-200 bg-red-50 shadow-sm ring-1 ring-red-100 hover:border-red-400"
+      : "border-gray-100 bg-white hover:border-green-400"
+  }
+`}
+>
+  <span
+    class={`text-4xl md:text-5xl font-medium ${isException ? "text-red-600" : "text-slate-800"}`}
+  >
+    {kana}
+  </span>
+
+  <span
+    class={`
+    mt-2 font-black px-3 py-1 rounded-md uppercase tracking-tighter
+    ${isException ? "bg-red-500 text-white animate-pulse-slow" : "bg-blue-50 text-blue-600"}
+  `}
+  >
+    {romaji}
+  </span>
+</div>
+
+<style>
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+</style>

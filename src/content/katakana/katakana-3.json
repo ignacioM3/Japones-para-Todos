@@ -1,0 +1,66 @@
+[
+  {
+    "kana": [
+      { "kana": "キャ", "isException": false, "romaji": "KYA" },
+      { "kana": "キュ", "isException": false, "romaji": "KYU" },
+      { "kana": "キョ", "isException": false, "romaji": "KYO" },
+      { "kana": "ギャ", "isException": false, "romaji": "GYA" },
+      { "kana": "ギュ", "isException": false, "romaji": "GYU" },
+      { "kana": "ギョ", "isException": false, "romaji": "GYO" }
+    ],
+    "subTitle": "KYA KYU KYO GYA GYU GYO",
+    "title": "fila K y G",
+    "info": "Se combinan con ャュョ pequeños para crear nuevos sonidos."
+  },
+  {
+    "kana": [
+      { "kana": "シャ", "isException": false, "romaji": "SHA" },
+      { "kana": "シュ", "isException": false, "romaji": "SHU" },
+      { "kana": "ショ", "isException": false, "romaji": "SHO" },
+      { "kana": "ジャ", "isException": false, "romaji": "JA" },
+      { "kana": "ジュ", "isException": false, "romaji": "JU" },
+      { "kana": "ジョ", "isException": false, "romaji": "JO" }
+    ],
+    "subTitle": "SHA SHU SHO JA JU JO",
+    "title": "fila S y J"
+  },
+  {
+    "kana": [
+      { "kana": "チャ", "isException": false, "romaji": "CHA" },
+      { "kana": "チュ", "isException": false, "romaji": "CHU" },
+      { "kana": "チョ", "isException": false, "romaji": "CHO" },
+      { "kana": "ニャ", "isException": false, "romaji": "NYA" },
+      { "kana": "ニュ", "isException": false, "romaji": "NYU" },
+      { "kana": "ニョ", "isException": false, "romaji": "NYO" }
+    ],
+    "subTitle": "CHA CHU CHO NYA NYU NYO",
+    "title": "fila T y N"
+  },
+  {
+    "kana": [
+      { "kana": "ヒャ", "isException": false, "romaji": "HYA" },
+      { "kana": "ヒュ", "isException": false, "romaji": "HYU" },
+      { "kana": "ヒョ", "isException": false, "romaji": "HYO" },
+      { "kana": "ビャ", "isException": false, "romaji": "BYA" },
+      { "kana": "ビュ", "isException": false, "romaji": "BYU" },
+      { "kana": "ビョ", "isException": false, "romaji": "BYO" },
+      { "kana": "ピャ", "isException": false, "romaji": "PYA" },
+      { "kana": "ピュ", "isException": false, "romaji": "PYU" },
+      { "kana": "ピョ", "isException": false, "romaji": "PYO" }
+    ],
+    "subTitle": "HYA HYU HYO BYA BYU BYO PYA PYU PYO",
+    "title": "fila H, B y P"
+  },
+  {
+    "kana": [
+      { "kana": "ミャ", "isException": false, "romaji": "MYA" },
+      { "kana": "ミュ", "isException": false, "romaji": "MYU" },
+      { "kana": "ミョ", "isException": false, "romaji": "MYO" },
+      { "kana": "リャ", "isException": false, "romaji": "RYA" },
+      { "kana": "リュ", "isException": false, "romaji": "RYU" },
+      { "kana": "リョ", "isException": false, "romaji": "RYO" }
+    ],
+    "subTitle": "MYA MYU MYO RYA RYU RYO",
+    "title": "fila M y R"
+  }
+]

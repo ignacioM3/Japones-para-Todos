@@ -1,0 +1,221 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contacto - Aprende Japonés">
+  <main class="bg-gray-50 min-h-screen pb-20">
+
+    <!-- HERO -->
+    <section class="relative">
+      <img
+        src="/images/fondo1.jpg"
+        class="h-[300px] md:h-[380px] w-full object-cover"
+        alt="Imagen de fondo contacto"
+      />
+      <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-6">
+        <h1 class="font-lilita text-white text-4xl md:text-5xl">
+          Contacto
+        </h1>
+        <p class="text-gray-200 font-mono mt-4 max-w-[600px]">
+          ¿Tenés dudas sobre las lecciones, encontraste un error o querés colaborar con el proyecto?
+        </p>
+      </div>
+    </section>
+
+    <!-- POR QUÉ CONTACTARNOS -->
+    <section class="max-w-[900px] mx-auto px-6 mt-14">
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <h2 class="text-3xl font-bold text-center text-gray-700 mb-10">
+          ¿En qué podemos ayudarte?
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="flex gap-4">
+            <div class="text-3xl">🐛</div>
+            <div>
+              <h3 class="font-bold text-gray-700">Reportar un error</h3>
+              <p class="text-gray-600 text-sm">
+                Si encontraste algo mal en una lección, avisanos para corregirlo.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="text-3xl">💡</div>
+            <div>
+              <h3 class="font-bold text-gray-700">Sugerencias</h3>
+              <p class="text-gray-600 text-sm">
+                Tus ideas nos ayudan a mejorar el curso y agregar contenido útil.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="text-3xl">🤝</div>
+            <div>
+              <h3 class="font-bold text-gray-700">Colaborar</h3>
+              <p class="text-gray-600 text-sm">
+                ¿Querés sumarte al proyecto? Nos encantaría saber de vos.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="text-3xl">❓</div>
+            <div>
+              <h3 class="font-bold text-gray-700">Consultas generales</h3>
+              <p class="text-gray-600 text-sm">
+                Cualquier otra duda que tengas sobre el curso o el proyecto.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-red-50 border border-red-200 p-4 rounded-lg text-center text-sm text-red-800 font-mono">
+          Intentamos responder todos los mensajes. ¡No te quedes con la duda!
+        </div>
+      </div>
+    </section>
+
+    <!-- CANALES DE CONTACTO -->
+    <section class="max-w-[1100px] mx-auto px-6 mt-14">
+      <h2 class="text-3xl font-bold text-center text-gray-700 mb-10">
+        Canales de contacto
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- EMAIL -->
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition">
+          <div class="text-4xl mb-4">✉️</div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Email</h3>
+          <p class="text-gray-600 text-sm mb-5">
+            Escribinos directamente para consultas o reportes.
+          </p>
+          <a
+            href="mailto:contacto@nihongogratis.com"
+            class="inline-block bg-theme-red hover:opacity-90 text-white font-bold px-6 py-3 rounded-lg transition"
+          >
+            Enviar email
+          </a>
+        </div>
+
+        <!-- DISCORD -->
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition">
+          <div class="text-4xl mb-4">💬</div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Discord</h3>
+          <p class="text-gray-600 text-sm mb-5">
+            Próximamente — comunidad para aprender y resolver dudas juntos.
+          </p>
+          <span class="inline-block bg-gray-300 text-gray-500 font-bold px-6 py-3 rounded-lg cursor-not-allowed">
+            Próximamente
+          </span>
+        </div>
+
+        <!-- INSTAGRAM -->
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition">
+          <div class="text-4xl mb-4">📸</div>
+          <h3 class="text-xl font-bold text-gray-700 mb-2">Instagram</h3>
+          <p class="text-gray-600 text-sm mb-5">
+            Seguinos para novedades, ejercicios y contenido extra.
+          </p>
+          <a
+            href="https://instagram.com/nihongogratis"
+            target="_blank"
+            class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold px-6 py-3 rounded-lg transition"
+          >
+            Seguirnos
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="max-w-[700px] mx-auto mt-16 px-6">
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <h3 class="text-2xl font-bold text-gray-700 text-center mb-6">
+          Envianos un mensaje
+        </h3>
+
+        <form
+          action="https://formspree.io/f/your-form-id"
+          method="POST"
+          class="flex flex-col gap-5"
+        >
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-1">
+              <label class="text-sm font-bold text-gray-600" for="nombre">Nombre</label>
+              <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                required
+                placeholder="Tu nombre"
+                class="border border-gray-200 rounded-lg px-4 py-2 font-mono text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-theme-red transition"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="text-sm font-bold text-gray-600" for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="tu@email.com"
+                class="border border-gray-200 rounded-lg px-4 py-2 font-mono text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-theme-red transition"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-sm font-bold text-gray-600" for="asunto">Motivo</label>
+            <select
+              id="asunto"
+              name="asunto"
+              class="border border-gray-200 rounded-lg px-4 py-2 font-mono text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-theme-red transition bg-white"
+            >
+              <option value="error">Reportar un error</option>
+              <option value="sugerencia">Sugerencia</option>
+              <option value="colaboracion">Quiero colaborar</option>
+              <option value="consulta">Consulta general</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-sm font-bold text-gray-600" for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              required
+              rows="5"
+              placeholder="Escribí tu mensaje acá..."
+              class="border border-gray-200 rounded-lg px-4 py-2 font-mono text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-theme-red transition resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="cursor-pointer bg-theme-red text-white font-bold py-3 rounded-lg shadow-md hover:scale-105 transition-transform"
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- GRACIAS -->
+    <section class="text-center mt-20 px-6">
+      <h2 class="text-2xl font-bold text-gray-700 mb-4">
+        ¡Gracias por ser parte del proyecto!
+      </h2>
+      <p class="text-gray-600 max-w-[600px] mx-auto">
+        Cada mensaje, sugerencia y reporte nos ayuda a hacer mejor este curso para toda la comunidad.
+      </p>
+      <div class="text-5xl mt-6">🎌</div>
+    </section>
+
+  </main>
+</Layout>

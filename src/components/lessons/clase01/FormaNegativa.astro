@@ -1,0 +1,56 @@
+---
+import SectionContainer from "../../../components/styles/SectionContainer.astro";
+import TextIntro from "../../../components/styles/TextIntro.astro";
+import Title from "../../../components/styles/Title.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<SectionContainer id="forma-negativa">
+  <Title>Forma negativa del です</Title>
+  <TextIntro>
+    Aprendimos ya a decir "yo soy estudiante" わたしはがくせいです。 (watashi wa
+    gakusei desu) y "tú eres profesor" あなたはせんせいです。(anata wa sensei
+    desu). Ahora vamos a aprender a negar estas oraciones. Para ello, utilizamos
+    la forma negativa de です que es ではありません (dewa arimasen) o
+    じゃありません (ja arimasen). Las dos significan lo mismo con la diferencia que el ではありません es mas formal que el じゃありません.
+  </TextIntro>
+  <ul class="font-mono mt-5 w-[80%] md:w-[70%] mx-auto list-disc list-inside">
+    <li class="mt-4">
+      Yo soy estudiante
+
+      <p class="flex items-center gap-2">
+        <Icon
+          data-audio="/audio/clase01/01-gakkuseidesu.mp3"
+          name="sound"
+          class="border text-2xl rounded-sm cursor-pointer hover:bg-green-500 hover:text-white transition-colors p-1"
+        />
+        わたし<span class="text-green-600 font-bold">は</span> がくせい<span
+          class="text-green-600 font-bold">ではありません</span
+        ><span class="text-red-500 font-bold">(watashi wa gakusei desu)</span>
+      </p>
+      <p class="text-sm text-gray-600 mt-1">
+        En este caso el tema es "yo" (わたし), así que usamos la partícula は
+        después del pronombre. Luego tenemos "soy estudiante" "がくせい"
+        (gakusei) significa estudiante y como dijimos que "です" es ser y estar
+        va al final.
+      </p>
+    </li>
+    <li class="mt-4">
+      Tú eres profesor
+      <p class="flex items-center gap-2">
+        <Icon
+          data-audio="/audio/clase01/01-senseidesu.mp3"
+          name="sound"
+          class="border text-2xl rounded-sm cursor-pointer hover:bg-green-500 hover:text-white transition-colors p-1"
+        /> あなたは せんせいです。<span class="text-red-500 font-bold"
+          >(Anata wa sensei desu)</span
+        >
+      </p>
+    </li>
+    <img
+      src="/images/clase1/anata.webp"
+      alt="explicación de la partícula は"
+      class="max-w-[100%] mt-5 rounded-md cursor-pointer"
+    />
+  </ul>
+</SectionContainer>

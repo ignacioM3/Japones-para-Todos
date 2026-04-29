@@ -1,0 +1,112 @@
+[
+  {
+    "kana": [
+      { "kana": "あ", "isException": false, "romaji": "A" },
+      { "kana": "い", "isException": false, "romaji": "I" },
+      { "kana": "う", "isException": false, "romaji": "U" },
+      { "kana": "え", "isException": false, "romaji": "E" },
+      { "kana": "お", "isException": false, "romaji": "O" }
+    ],
+    "subTitle": "A I U E O",
+    "title": "vocales"
+  },
+  {
+    "kana": [
+      { "kana": "か", "isException": false, "romaji": "KA" },
+      { "kana": "き", "isException": false, "romaji": "KI" },
+      { "kana": "く", "isException": false, "romaji": "KU" },
+      { "kana": "け", "isException": false, "romaji": "KE" },
+      { "kana": "こ", "isException": false, "romaji": "KO" }
+    ],
+    "subTitle": "KA KI KU KE KO",
+    "title": "fila de la K"
+  },
+  {
+    "kana": [
+      { "kana": "さ", "isException": false, "romaji": "SA" },
+      { "kana": "し", "isException": true, "romaji": "SHI" },
+      { "kana": "す", "isException": false, "romaji": "SU" },
+      { "kana": "せ", "isException": false, "romaji": "SE" },
+      { "kana": "そ", "isException": false, "romaji": "SO" }
+    ],
+    "subTitle": "SA SHI SU SE SO",
+    "title": "fila de la S",
+    "info": "Hasta ahora veniamos siguendo el patron de ir agregando únicamente A I U E O. Pero en este caso tenemos una exepciones hasta ahora(En rojo su pronunciación):"
+  },
+  {
+    "kana": [
+      { "kana": "た", "isException": false, "romaji": "TA" },
+      { "kana": "ち", "isException": true, "romaji": "CHI" },
+      { "kana": "つ", "isException": true, "romaji": "TSU" },
+      { "kana": "て", "isException": false, "romaji": "TE" },
+      { "kana": "と", "isException": false, "romaji": "TO" }
+    ],
+    "subTitle": "TA CHI TSU TE TO",
+      "title": "fila de la T",
+    "info": "En japonés, la fila 'T' tiene dos sonidos que cambian para facilitar la pronunciación. ¡Presta atención a los marcados en rojo!"
+  },
+  {
+    "kana": [
+      { "kana": "な", "isException": false, "romaji": "NA" },
+      { "kana": "に", "isException": false, "romaji": "NI" },
+      { "kana": "ぬ", "isException": false, "romaji": "NU" },
+      { "kana": "ね", "isException": false, "romaji": "NE" },
+      { "kana": "の", "isException": false, "romaji": "NO" }
+    ],
+    "subTitle": "NA NI NU NE NO",
+      "title": "fila de la N"
+  },
+  {
+    "kana": [
+      { "kana": "は", "isException": false, "romaji": "HA" },
+      { "kana": "ひ", "isException": false, "romaji": "HI" },
+      { "kana": "ふ", "isException": true, "romaji": "FU" },
+      { "kana": "へ", "isException": false, "romaji": "HE" },
+      { "kana": "ほ", "isException": false, "romaji": "HO" }
+    ],
+    "subTitle": "HA HI FU HE HO",
+      "title": "fila de la h",
+    "info": "En el español la H es muda, pero en el japonés si se pronuncia con un sonido similar al del 'hello'. Acá tenemos una exepción (En rojo su pronunciación)"
+  },
+  {
+    "kana": [
+      { "kana": "ま", "isException": false, "romaji": "MA" },
+      { "kana": "み", "isException": false, "romaji": "MI" },
+      { "kana": "む", "isException": false, "romaji": "MU" },
+      { "kana": "め", "isException": false, "romaji": "ME" },
+      { "kana": "も", "isException": false, "romaji": "MO" }
+    ],
+    "subTitle": "MA MI MU ME MO",
+      "title": "fila de la M"
+  },
+  {
+    "kana": [
+      { "kana": "ら", "isException": false, "romaji": "RA" },
+      { "kana": "り", "isException": false, "romaji": "RI" },
+      { "kana": "る", "isException": false, "romaji": "RU" },
+      { "kana": "れ", "isException": false, "romaji": "RE" },
+      { "kana": "ろ", "isException": false, "romaji": "RO" }
+    ],
+    "subTitle": "RA RI RU RE RO",
+      "title": "fila de la R"
+  },
+  {
+    "kana": [
+      { "kana": "や", "isException": true, "romaji": "YA" },
+      { "kana": "ゆ", "isException": true, "romaji": "YU" },
+      { "kana": "よ", "isException": true, "romaji": "YO" }
+    ],
+    "subTitle": "YA YU YO",
+      "title": "fila de la Y",
+    "info": "En esta caso tenemos otras expeciones pero su pronunciación lo mas similar al español es en el caso de Ya(や) es IA y asi con las otras(En rojo su pronunciación)"
+  },
+  {
+    "kana": [
+      { "kana": "わ", "isException": false, "romaji": "WA" },
+      { "kana": "ん", "isException": false, "romaji": "N" },
+      { "kana": "を", "isException": false, "romaji": "WO" }
+    ],
+      "title": "Ultimas letras",
+    "subTitle": "Wa Wo N"
+  }
+]

@@ -1,0 +1,115 @@
+---
+import Aside from "../../../../components/utils/Aside.astro";
+import VocabItem from "../../../../components/utils/VocabItem.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import { seccionesClase0 } from "../../../../lib/lessons";
+import MainContainer from "../../../../components/styles/MainContainer.astro";
+---
+
+<Layout title={"Vocabulario Katakana"}>
+    <MainContainer>
+        <Aside sections={seccionesClase0} />
+        <div class="mt-34 md:mt-30 max-w-175 w-full mb-10">
+            <div class="w-[90%] md:w-[70%] mx-auto mb-8 text-center">
+                <h3 class="text-2xl font-bold text-slate-800 mb-3">
+                    Vocabulario en Katakana
+                </h3>
+
+                <p class="text-gray-600 font-mono text-sm">
+                    Katakana se usa principalmente para palabras extranjeras. En
+                    rojo podés ver su pronunciación.
+                </p>
+
+                <div
+                    class="mt-4 inline-block bg-blue-50 text-blue-700 text-xs font-bold px-4 py-2 rounded-full"
+                >
+                    🔊 Tocá cada palabra para escuchar su pronunciación
+                </div>
+            </div>
+
+            <!-- 🔵 INFO CLAVE -->
+            <div
+                class="w-[90%] md:w-[70%] mx-auto bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg mb-10"
+            >
+                <p class="text-blue-800 text-sm font-mono leading-relaxed">
+                    💡 En katakana, muchas palabras vienen del inglés u otros
+                    idiomas. Además, las vocales largas se marcan con <span
+                        class="font-bold">ー</span
+                    >.
+                </p>
+            </div>
+
+            <div
+                class="w-[85%] md:w-[70%] mx-auto mt-5 font-mono flex flex-col gap-2"
+            >
+                <VocabItem
+                    japanese="コーヒー"
+                    reading="kōhī"
+                    meaning="Café"
+                    audio="/audio/clase0/kōhī.mp3"
+                />
+
+                <VocabItem
+                    japanese="テレビ"
+                    reading="terebi"
+                    meaning="Televisión"
+                    audio="/audio/clase0/terebi.mp3"
+                />
+
+                <VocabItem
+                    japanese="コンピューター"
+                    reading="konpyūtā"
+                    meaning="Computadora"
+                    audio="/audio/clase0/konpyūtā.mp3"
+                />
+
+                <VocabItem
+                    japanese="アルゼンチン"
+                    reading="aruzenchin"
+                    meaning="Argentina"
+                    audio="/audio/clase0/aruzenchin.mp3"
+                />
+
+                <VocabItem
+                    japanese="パン"
+                    reading="pan"
+                    meaning="Pan"
+                    audio="/audio/clase0/pan.mp3"
+                />
+
+                <VocabItem
+                    japanese="カップ"
+                    reading="kappu"
+                    meaning="Taza"
+                    audio="/audio/clase0/kappu.mp3"
+                />
+            </div>
+             <div class="flex items-center justify-between w-[90%] md:w-[70%] mx-auto mt-10">
+            <a
+                href="/lecciones/clase-0/katakana/intro"
+                class="mx-auto my-10 block w-max px-12 md:px-17 py-2 bg-gray-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-gray-600"
+            >
+                Volver
+            </a>
+            <a
+                href="/lecciones/clase-0/katakana/tarea"
+                class="mx-auto my-10 block w-max px-10 md:px-15 py-2 bg-green-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-green-600"
+            >
+                Siguiente
+            </a>
+        </div>
+        </div>
+    </MainContainer>
+</Layout>
+
+<script>
+    const audioElements = document.querySelectorAll("[data-audio]");
+
+    audioElements.forEach((element) => {
+        element.addEventListener("click", () => {
+            const audioSrc = element.getAttribute("data-audio");
+            const audio = new Audio(audioSrc!);
+            audio.play();
+        });
+    });
+</script>

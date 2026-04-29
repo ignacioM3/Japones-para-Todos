@@ -1,0 +1,161 @@
+[
+  {
+    "kana": [
+      {
+        "kana": "が",
+        "isException": false,
+        "romaji": "GA"
+      },
+      {
+        "kana": "ぎ",
+        "isException": false,
+        "romaji": "GI"
+      },
+      {
+        "kana": "ぐ",
+        "isException": false,
+        "romaji": "GU"
+      },
+      {
+        "kana": "げ",
+        "isException": false,
+        "romaji": "GE"
+      },
+      {
+        "kana": "ご",
+        "isException": false,
+        "romaji": "GO"
+      }
+    ],
+    "subTitle": "GA GI GU GE GO",
+    "title": "fila de la G",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la K por la G"
+  },
+  {
+    "kana": [
+      {
+        "kana": "ざ",
+        "isException": false,
+        "romaji": "ZA"
+      },
+      {
+        "kana": "じ",
+        "isException": true,
+        "romaji": "JI"
+      },
+      {
+        "kana": "ず",
+        "isException": false,
+        "romaji": "ZU"
+      },
+      {
+        "kana": "ぜ",
+        "isException": false,
+        "romaji": "ZE"
+      },
+      {
+        "kana": "ぞ",
+        "isException": false,
+        "romaji": "ZO"
+      }
+    ],
+    "subTitle": "ZA JI ZU ZE ZO",
+    "title": "fila de la z",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la S por la Z pero tenemos una excepcion(En rojo su pronunciación)"
+  },
+  {
+    "kana": [
+      {
+        "kana": "だ",
+        "isException": false,
+        "romaji": "DA"
+      },
+      {
+        "kana": "ぢ",
+        "isException": true,
+        "romaji": "JI"
+      },
+      {
+        "kana": "づ",
+        "isException": true,
+        "romaji": "ZU"
+      },
+      {
+        "kana": "で",
+        "isException": false,
+        "romaji": "DE"
+      },
+      {
+        "kana": "ど",
+        "isException": false,
+        "romaji": "DO"
+      }
+    ],
+    "subTitle": "DA JI ZU DE DO",
+    "title": "fila de la D",
+    "info": "Acá tenemos la utilización de ゛para cambiar el sonido de la fila de la T por la D, con excepciones en la pronunciación"
+  },
+  {
+    "kana": [
+      {
+        "kana": "ば",
+        "isException": false,
+        "romaji": "BA"
+      },
+      {
+        "kana": "び",
+        "isException": false,
+        "romaji": "BI"
+      },
+      {
+        "kana": "ぶ",
+        "isException": false,
+        "romaji": "BU"
+      },
+      {
+        "kana": "べ",
+        "isException": false,
+        "romaji": "BE"
+      },
+      {
+        "kana": "ぼ",
+        "isException": false,
+        "romaji": "BO"
+      }
+    ],
+    "subTitle": "BA BI BU BE BO",
+    "title": "fila de la B"
+  },
+  {
+    "kana": [
+      {
+        "kana": "ぱ",
+        "isException": false,
+        "romaji": "PA"
+      },
+      {
+        "kana": "ぴ",
+        "isException": false,
+        "romaji": "PI"
+      },
+      {
+        "kana": "ぷ",
+        "isException": false,
+        "romaji": "PU"
+      },
+      {
+        "kana": "ぺ",
+        "isException": false,
+        "romaji": "PE"
+      },
+      {
+        "kana": "ぽ",
+        "isException": false,
+        "romaji": "PO"
+      }
+    ],
+    "subTitle": "PA PI PU PE PO",
+    "title": "fila de la P",
+    "info": "Acá tenemos la utilización de ° para cambiar el sonido de la fila de la H por la P"
+  }
+]

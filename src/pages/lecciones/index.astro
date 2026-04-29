@@ -1,0 +1,134 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import NotifyButton from "../../components/utils/NotifyButton";
+import ProgressBar from "../../components/styles/ProgressBar.astro";
+
+const clasesInfo = await getCollection("clasesInfo") as CollectionEntry<"clasesInfo">[];
+export const prerender = true;
+---
+
+<Layout title="Lecciones de japonés">
+  <main class="bg-gray-50 min-h-screen pb-20">
+    <!-- HERO -->
+    <section class="relative">
+      <img
+        src="/images/fondo1.jpg"
+        class="h-80 md:h-105 w-full object-cover"
+        alt="Imagen de fondo para lecciones"
+      />
+
+      <div
+        class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center"
+      >
+        <h1 class="font-lilita text-white text-4xl md:text-5xl">
+          Lecciones de Japonés
+        </h1>
+
+        <p class="text-gray-200 font-mono mt-4 max-w-125 px-4">
+          Curso basado en el método Minna no Nihongo. Avanza paso a paso desde
+          nivel principiante.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="max-w-175 mx-auto mt-10 px-6">
+      <div
+        class="bg-white p-6 rounded-xl shadow-md text-gray-600 font-mono text-center"
+      >
+        <p class="mb-3">
+          Si no tienes conocimiento de <strong>hiragana o katakana</strong>, te
+          recomendamos empezar por la <strong>lección 0</strong>.
+        </p>
+
+        <p class="mb-3">
+          En la lección 0 también aprenderás vocabulario básico muy útil para
+          empezar a estudiar japonés.
+        </p>
+
+        <p>
+          Pronto tendremos una comunidad en Discord para resolver dudas y
+          aprender juntos.
+        </p>
+      </div>
+    </section>
+
+    <!-- LESSON GRID -->
+    <section class="max-w-275 mx-auto mt-14 px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          clasesInfo
+            .sort((a, b) => a.data.id - b.data.id)
+            .map((clase) => {
+              const { slug, data } = clase;
+              const { title, description, date, locked = false } = data;
+
+              return (
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                  {!locked ? (
+                    <>
+                      <a
+                        href={`/lecciones/${slug}`}
+                        class="block relative h-50 group"
+                      >
+                        <img
+                          src={`/images/${slug}.webp`}
+                          class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition"
+                          alt={`Imagen de la clase ${title}`}
+                        />
+
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:scale-110 transition">
+                          <h2 class="text-white text-2xl font-semibold text-center px-4">
+                            {title}
+                          </h2>
+                        </div>
+                      </a>
+
+                      <div class="p-5">
+                        <p class="text-gray-600 font-mono text-sm text-center">
+                          {description}
+                        </p>
+                        <ProgressBar value={100} />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div class="relative h-50 bg-gray-400 flex items-center justify-center">
+                        <img
+                          src={`/images/${slug}.webp`}
+                          class="absolute inset-0 w-full h-full object-cover opacity-30"
+                          alt={`Lección bloqueada ${title}`}
+                        />
+
+                        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
+                          <h2 class="text-white text-2xl font-semibold text-center">
+                            🔒 {title}
+                          </h2>
+
+                          <p class="text-gray-200 mt-2">Próximamente</p>
+                        </div>
+                      </div>
+
+                      <div class="p-5 text-center">
+                        {date && (
+                          <div class="flex flex-col gap-3 items-center">
+                            <p class="text-sm text-gray-600 font-bold">
+                              📅 Disponible el{" "}
+                              {new Date(date).toLocaleDateString("es-AR")}
+                            </p>
+
+                            <NotifyButton client:load />
+                          </div>
+                        )}
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

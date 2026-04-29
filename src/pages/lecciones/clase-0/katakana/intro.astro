@@ -1,0 +1,287 @@
+---
+import TextIntro from "../../../../components/styles/TextIntro.astro";
+import { Icon } from "astro-icon/components";
+import KanaGroup from "../../../../components/utils/KanaGroup.astro";
+import KanaCard from "../../../../components/utils/KanaCard.astro";
+import { getCollection } from "astro:content";
+import Layout from "../../../../layouts/Layout.astro";
+import MainContainer from "../../../../components/styles/MainContainer.astro";
+import Aside from "../../../../components/utils/Aside.astro";
+import { seccionesClase0 } from "../../../../lib/lessons";
+
+const katakana = await getCollection("katakana");
+
+const sorted = katakana.sort((a, b) =>
+    a.id.localeCompare(b.id, undefined, { numeric: true }),
+);
+
+// igual que hiragana
+const katakanaData = sorted[0];
+const katakanaData2 = sorted[1];
+const katakanaData3 = sorted[2];
+---
+
+<Layout title={"Introducción a Katakana"}>
+    <MainContainer>
+        <Aside sections={seccionesClase0} />
+        <div class="mt-34 md:mt-30 max-w-175 w-full mb-10">
+            <h2 class="text-center font-semibold text-gray-500 text-2xl">
+                Introducción a Katakana
+            </h2>
+
+            <TextIntro className="text-gray-600">
+                Katakana es un silabario japonés, al igual que hiragana, pero se
+                utiliza principalmente para palabras extranjeras, nombres
+                propios extranjeros, marcas y onomatopeyas.
+            </TextIntro>
+
+            <!-- 🔵 Diferencia clave -->
+            <div
+                class="w-[90%] md:w-[70%] mx-auto mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6"
+            >
+                <p class="text-sm text-blue-800 font-mono text-center">
+                    ✨ Katakana tiene trazos más rectos y angulares, mientras
+                    que hiragana es más curvo y suave.
+                </p>
+            </div>
+
+            {
+                katakanaData.data.map((info) => (
+                    <KanaGroup
+                        title={info.title}
+                        subTitle={info.subTitle}
+                        info={info.info}
+                    >
+                        {info.kana.map((kana) => (
+                            <KanaCard
+                                kana={kana.kana}
+                                romaji={kana.romaji}
+                                isException={kana.isException}
+                            />
+                        ))}
+                    </KanaGroup>
+                ))
+            }
+
+            <!-- 🔤 TENTEN Y MARU -->
+            <div class="w-[90%] md:w-[70%] mx-auto space-y-10">
+                <h3 class="text-2xl font-bold text-slate-800 text-center">
+                    Tenten ゛ y Maru °
+                </h3>
+
+                <p class="text-center text-gray-600 font-mono text-sm">
+                    Se usan para modificar el sonido de ciertas letras en
+                    katakana.
+                </p>
+
+                <!-- TENTEN -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm"
+                >
+                    <h4
+                        class="text-lg text-center font-bold text-slate-800 mb-4"
+                    >
+                        Tenten ゛
+                    </h4>
+
+                    <p class="text-sm text-gray-600 font-mono mb-6 text-center">
+                        Cambia sonidos como KA → GA. Se aplica a K, S, T y H.
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-4 text-center">
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-2xl">カ</p>
+                            <p class="text-xs text-gray-500">ka</p>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-center text-gray-400 font-bold"
+                        >
+                            <Icon
+                                name="heroicons:arrow-right"
+                                class="text-2xl"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-red-50 border border-red-200 p-4 rounded-xl"
+                        >
+                            <p class="text-2xl text-red-600">ガ</p>
+                            <p class="text-xs text-red-500 font-bold">ga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MARU -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm"
+                >
+                    <h4
+                        class="text-lg text-center font-bold text-slate-800 mb-4"
+                    >
+                        Maru °
+                    </h4>
+
+                    <p class="text-sm text-gray-600 font-mono mb-6 text-center">
+                        Cambia sonidos como HA → PA.
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-4 text-center">
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-2xl">ハ</p>
+                            <p class="text-xs text-gray-500">ha</p>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-center text-gray-400 font-bold"
+                        >
+                            <Icon
+                                name="heroicons:arrow-right"
+                                class="text-2xl"
+                            />
+                        </div>
+
+                        <div
+                            class="bg-purple-50 border border-purple-200 p-4 rounded-xl"
+                        >
+                            <p class="text-2xl text-purple-600">パ</p>
+                            <p class="text-xs text-purple-500 font-bold">pa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {
+                katakanaData2.data.map((info) => (
+                    <KanaGroup
+                        title={info.title}
+                        subTitle={info.subTitle}
+                        info={info.info}
+                    >
+                        {info.kana.map((kana) => (
+                            <KanaCard
+                                kana={kana.kana}
+                                romaji={kana.romaji}
+                                isException={kana.isException}
+                            />
+                        ))}
+                    </KanaGroup>
+                ))
+            }
+
+            <!-- 🔥 COMBINACIONES -->
+            <div class="w-[90%] md:w-[70%] mx-auto">
+                <h3 class="text-2xl font-bold text-slate-800 text-center mb-6">
+                    Combinaciones con ャ・ュ・ョ
+                </h3>
+
+                <p class="text-gray-600 font-mono text-sm text-center mb-6">
+                    Al igual que en hiragana, se usan versiones pequeñas para
+                    formar nuevos sonidos.
+                </p>
+
+                <div
+                    class="flex items-center justify-center gap-4 mb-8 text-center"
+                >
+                    <div class="bg-white border rounded-xl p-4">
+                        <p class="text-3xl">キ</p>
+                        <p class="text-xs text-gray-500">ki</p>
+                    </div>
+
+                    <span class="text-xl font-bold text-gray-400">+</span>
+
+                    <div class="bg-white border rounded-xl p-4">
+                        <p class="text-3xl">ョ</p>
+                        <p class="text-xs text-gray-500">yo (pequeño)</p>
+                    </div>
+
+                    <span class="text-xl font-bold text-gray-400">→</span>
+
+                    <div
+                        class="bg-green-50 border-2 border-green-300 rounded-xl p-4"
+                    >
+                        <p class="text-3xl font-bold text-green-700">キョ</p>
+                        <p class="text-xs text-green-600 font-bold">kyo</p>
+                    </div>
+                </div>
+            </div>
+
+            {
+                katakanaData3.data.map((info) => (
+                    <KanaGroup
+                        title={info.title}
+                        subTitle={info.subTitle}
+                        info={info.info}
+                    >
+                        {info.kana.map((kana) => (
+                            <KanaCard
+                                kana={kana.kana}
+                                romaji={kana.romaji}
+                                isException={kana.isException}
+                            />
+                        ))}
+                    </KanaGroup>
+                ))
+            }
+
+            <!-- 🔥 EXTRA IMPORTANTE -->
+            <div class="w-[90%] md:w-[70%] mx-auto space-y-10">
+                <!-- ー vocal larga -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm"
+                >
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">
+                        Vocal larga: ー
+                    </h4>
+
+                    <p class="text-gray-600 font-mono text-sm">
+                        En katakana, las vocales largas se representan con una
+                        línea: ー
+                    </p>
+
+                    <div class="mt-4 text-center">
+                        <p class="text-xl font-semibold">コーヒー</p>
+                        <p class="text-blue-500 font-bold text-sm">
+                            KŌHĪ (café)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ッ pequeña -->
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm"
+                >
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">
+                        ッ pequeña
+                    </h4>
+
+                    <p class="text-gray-600 font-mono text-sm">
+                        Funciona igual que en hiragana: marca una pausa antes de
+                        la consonante.
+                    </p>
+
+                    <div class="mt-4 text-center">
+                        <p class="text-xl font-semibold">カップ</p>
+                        <p class="text-blue-500 font-bold text-sm">
+                            KAPPU (taza)
+                        </p>
+                    </div>
+                </div>
+            </div>
+              <div class="flex items-center justify-between w-[90%] md:w-[70%] mx-auto mt-10">
+            <a
+                href="/lecciones/clase-0/hiragana/tarea"
+                class="mx-auto my-10 block w-max px-12 md:px-17 py-2 bg-gray-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-gray-600"
+            >
+                Volver
+            </a>
+            <a
+                href="/lecciones/clase-0/katakana/vocabulario"
+                class="mx-auto my-10 block w-max px-10 md:px-15 py-2 bg-green-500 text-white rounded-md text-lg font-medium transition-colors duration-300 hover:bg-green-600"
+            >
+                Siguiente
+            </a>
+        </div>
+        </div>
+    </MainContainer>
+</Layout>

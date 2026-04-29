@@ -1,0 +1,111 @@
+[
+  {
+    "kana": [
+      { "kana": "ア", "isException": false, "romaji": "A" },
+      { "kana": "イ", "isException": false, "romaji": "I" },
+      { "kana": "ウ", "isException": false, "romaji": "U" },
+      { "kana": "エ", "isException": false, "romaji": "E" },
+      { "kana": "オ", "isException": false, "romaji": "O" }
+    ],
+    "subTitle": "A I U E O",
+    "title": "vocales"
+  },
+  {
+    "kana": [
+      { "kana": "カ", "isException": false, "romaji": "KA" },
+      { "kana": "キ", "isException": false, "romaji": "KI" },
+      { "kana": "ク", "isException": false, "romaji": "KU" },
+      { "kana": "ケ", "isException": false, "romaji": "KE" },
+      { "kana": "コ", "isException": false, "romaji": "KO" }
+    ],
+    "subTitle": "KA KI KU KE KO",
+    "title": "fila de la K"
+  },
+  {
+    "kana": [
+      { "kana": "サ", "isException": false, "romaji": "SA" },
+      { "kana": "シ", "isException": true, "romaji": "SHI" },
+      { "kana": "ス", "isException": false, "romaji": "SU" },
+      { "kana": "セ", "isException": false, "romaji": "SE" },
+      { "kana": "ソ", "isException": false, "romaji": "SO" }
+    ],
+    "subTitle": "SA SHI SU SE SO",
+    "title": "fila de la S",
+    "info": "Al igual que en hiragana, tenemos una excepción: シ se pronuncia 'shi'."
+  },
+  {
+    "kana": [
+      { "kana": "タ", "isException": false, "romaji": "TA" },
+      { "kana": "チ", "isException": true, "romaji": "CHI" },
+      { "kana": "ツ", "isException": true, "romaji": "TSU" },
+      { "kana": "テ", "isException": false, "romaji": "TE" },
+      { "kana": "ト", "isException": false, "romaji": "TO" }
+    ],
+    "subTitle": "TA CHI TSU TE TO",
+    "title": "fila de la T",
+    "info": "Las mismas excepciones que en hiragana: チ (chi) y ツ (tsu)."
+  },
+  {
+    "kana": [
+      { "kana": "ナ", "isException": false, "romaji": "NA" },
+      { "kana": "ニ", "isException": false, "romaji": "NI" },
+      { "kana": "ヌ", "isException": false, "romaji": "NU" },
+      { "kana": "ネ", "isException": false, "romaji": "NE" },
+      { "kana": "ノ", "isException": false, "romaji": "NO" }
+    ],
+    "subTitle": "NA NI NU NE NO",
+    "title": "fila de la N"
+  },
+  {
+    "kana": [
+      { "kana": "ハ", "isException": false, "romaji": "HA" },
+      { "kana": "ヒ", "isException": false, "romaji": "HI" },
+      { "kana": "フ", "isException": true, "romaji": "FU" },
+      { "kana": "ヘ", "isException": false, "romaji": "HE" },
+      { "kana": "ホ", "isException": false, "romaji": "HO" }
+    ],
+    "subTitle": "HA HI FU HE HO",
+    "title": "fila de la H",
+    "info": "フ se pronuncia 'fu', similar a hiragana."
+  },
+  {
+    "kana": [
+      { "kana": "マ", "isException": false, "romaji": "MA" },
+      { "kana": "ミ", "isException": false, "romaji": "MI" },
+      { "kana": "ム", "isException": false, "romaji": "MU" },
+      { "kana": "メ", "isException": false, "romaji": "ME" },
+      { "kana": "モ", "isException": false, "romaji": "MO" }
+    ],
+    "subTitle": "MA MI MU ME MO",
+    "title": "fila de la M"
+  },
+  {
+    "kana": [
+      { "kana": "ラ", "isException": false, "romaji": "RA" },
+      { "kana": "リ", "isException": false, "romaji": "RI" },
+      { "kana": "ル", "isException": false, "romaji": "RU" },
+      { "kana": "レ", "isException": false, "romaji": "RE" },
+      { "kana": "ロ", "isException": false, "romaji": "RO" }
+    ],
+    "subTitle": "RA RI RU RE RO",
+    "title": "fila de la R"
+  },
+  {
+    "kana": [
+      { "kana": "ヤ", "isException": true, "romaji": "YA" },
+      { "kana": "ユ", "isException": true, "romaji": "YU" },
+      { "kana": "ヨ", "isException": true, "romaji": "YO" }
+    ],
+    "subTitle": "YA YU YO",
+    "title": "fila de la Y"
+  },
+  {
+    "kana": [
+      { "kana": "ワ", "isException": false, "romaji": "WA" },
+      { "kana": "ン", "isException": false, "romaji": "N" },
+      { "kana": "ヲ", "isException": false, "romaji": "WO" }
+    ],
+    "subTitle": "WA WO N",
+    "title": "últimas letras"
+  }
+]

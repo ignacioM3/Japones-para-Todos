@@ -1,0 +1,113 @@
+---
+import FAQ from "../components/utils/FAQ.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="mt-[90px] max-w-[1100px] mx-auto px-6">
+
+    <!-- HERO -->
+    <section class="flex flex-col md:flex-row items-center justify-between gap-10">
+
+       <img 
+        src="/images/indexFondo.png" 
+        alt="Ilustración de fondo para el curso de japonés" 
+        class="absolute top-0 right-0 md:right-30 object-cover opacity-30 invert h-[600px] md:h-[560px] z-10"
+      />
+
+      <div class="z-10 max-w-[600px]">
+
+        <h1 class="font-lilita text-gray-700 text-5xl md:text-6xl flex flex-col gap-4">
+          Aprende <span class="text-theme-red">Japonés</span>
+          <span class="text-3xl md:text-4xl text-gray-500 font-semibold">
+            desde cero
+          </span>
+        </h1>
+
+        <p class="mt-6 text-gray-600 font-mono text-lg">
+          Curso autodidacta basado en el método 
+          <strong>Minna no Nihongo</strong>. Aprende hiragana,
+          katakana, gramática y vocabulario paso a paso.
+        </p>
+
+        <a href="/lecciones">
+          <button
+            class="cursor-pointer mt-8 bg-theme-red px-6 py-3 rounded-lg text-white font-bold shadow-lg hover:scale-105 transition-transform"
+          >
+            Comenzar Curso
+          </button>
+        </a>
+
+        <p class="mt-4 text-gray-500 text-sm">
+          みんなの日本語
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section class="mt-20">
+
+      <h2 class="text-3xl font-bold text-gray-700 text-center">
+        Qué aprenderás
+      </h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Hiragana</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Aprende el alfabeto básico japonés paso a paso.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Katakana</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Sistema de escritura para palabras extranjeras.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Gramática</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Aprende estructuras básicas del japonés.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Ejercicios</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Practica con actividades de cada lección.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- COURSE DESCRIPTION -->
+    <section class="mt-20 max-w-[700px] mx-auto text-center">
+
+      <h2 class="text-2xl font-bold text-gray-700">
+        Curso autodidacta para principiantes
+      </h2>
+
+      <p class="mt-6 text-gray-600 font-mono">
+        ¡Aprendé japonés desde cero! Este curso incluye 25 lecciones
+        con actividades basadas en el libro Minna no Nihongo. 
+        Está diseñado para estudiantes que quieren aprender
+        japonés de forma autodidacta y gratuita.
+      </p>
+
+    </section>
+
+    <!-- FAQ -->
+    <FAQ />
+
+  </main>
+
+  <footer class="mt-20"></footer>
+
+</Layout>

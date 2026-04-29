@@ -1,0 +1,58 @@
+---
+import SectionContainer from "../../../components/styles/SectionContainer.astro";
+import TextIntro from "../../../components/styles/TextIntro.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<SectionContainer id="tarea-katakana">
+  <h2 class="text-center font-semibold text-gray-500 text-2xl">
+    Tarea Katakana
+  </h2>
+
+  <TextIntro className="text-gray-600">
+    Katakana se usa en la vida real constantemente. Estas tareas te ayudan a reconocerlo rápidamente.
+  </TextIntro>
+
+  <div class="w-[90%] md:w-[70%] mx-auto space-y-6 mt-8">
+
+    <!-- 👁️ Paso 1 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+      <h3 class="font-bold text-slate-800 mb-2">
+        1. Reconocimiento visual
+      </h3>
+      <p class="text-sm text-gray-600 font-mono">
+        Buscá palabras en katakana en internet (marcas, productos, anime) e intentá leerlas sin ayuda.
+      </p>
+    </div>
+
+    <!-- 🔤 Paso 2 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+      <h3 class="font-bold text-slate-800 mb-2">
+        2. Escribí palabras extranjeras
+      </h3>
+
+      <p class="text-sm text-gray-600 font-mono">
+        Intentá escribir en katakana palabras como:
+      </p>
+
+      <div class="mt-4 bg-gray-50 p-4 rounded-xl text-sm font-mono text-gray-700">
+        • computadora <br />
+        • café <br />
+        • televisión <br />
+        • pizza
+      </div>
+    </div>
+
+    <!-- 🎤 Paso 3 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+      <h3 class="font-bold text-slate-800 mb-2">
+        3. Pronunciación
+      </h3>
+
+      <p class="text-sm text-gray-600 font-mono">
+        Leé en voz alta palabras en katakana. Intentá imitar la pronunciación japonesa.
+      </p>
+    </div>
+
+  </div>
+</SectionContainer>

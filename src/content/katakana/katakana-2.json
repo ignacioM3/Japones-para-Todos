@@ -1,0 +1,59 @@
+[
+  {
+    "kana": [
+      { "kana": "ガ", "isException": false, "romaji": "GA" },
+      { "kana": "ギ", "isException": false, "romaji": "GI" },
+      { "kana": "グ", "isException": false, "romaji": "GU" },
+      { "kana": "ゲ", "isException": false, "romaji": "GE" },
+      { "kana": "ゴ", "isException": false, "romaji": "GO" }
+    ],
+    "subTitle": "GA GI GU GE GO",
+    "title": "fila de la G",
+    "info": "Se agrega ゛ para transformar la fila K en G."
+  },
+  {
+    "kana": [
+      { "kana": "ザ", "isException": false, "romaji": "ZA" },
+      { "kana": "ジ", "isException": true, "romaji": "JI" },
+      { "kana": "ズ", "isException": false, "romaji": "ZU" },
+      { "kana": "ゼ", "isException": false, "romaji": "ZE" },
+      { "kana": "ゾ", "isException": false, "romaji": "ZO" }
+    ],
+    "subTitle": "ZA JI ZU ZE ZO",
+    "title": "fila de la Z"
+  },
+  {
+    "kana": [
+      { "kana": "ダ", "isException": false, "romaji": "DA" },
+      { "kana": "ヂ", "isException": true, "romaji": "JI" },
+      { "kana": "ヅ", "isException": true, "romaji": "ZU" },
+      { "kana": "デ", "isException": false, "romaji": "DE" },
+      { "kana": "ド", "isException": false, "romaji": "DO" }
+    ],
+    "subTitle": "DA JI ZU DE DO",
+    "title": "fila de la D"
+  },
+  {
+    "kana": [
+      { "kana": "バ", "isException": false, "romaji": "BA" },
+      { "kana": "ビ", "isException": false, "romaji": "BI" },
+      { "kana": "ブ", "isException": false, "romaji": "BU" },
+      { "kana": "ベ", "isException": false, "romaji": "BE" },
+      { "kana": "ボ", "isException": false, "romaji": "BO" }
+    ],
+    "subTitle": "BA BI BU BE BO",
+    "title": "fila de la B"
+  },
+  {
+    "kana": [
+      { "kana": "パ", "isException": false, "romaji": "PA" },
+      { "kana": "ピ", "isException": false, "romaji": "PI" },
+      { "kana": "プ", "isException": false, "romaji": "PU" },
+      { "kana": "ペ", "isException": false, "romaji": "PE" },
+      { "kana": "ポ", "isException": false, "romaji": "PO" }
+    ],
+    "subTitle": "PA PI PU PE PO",
+    "title": "fila de la P",
+    "info": "Se usa ° para transformar la fila H en P."
+  }
+]
