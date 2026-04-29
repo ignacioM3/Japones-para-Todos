@@ -103,19 +103,6 @@ import MainContainer from "../../../../components/styles/MainContainer.astro";
     </MainContainer>
 </Layout>
 
-<script>
-    const audioElements = document.querySelectorAll("[data-audio]");
-
-    audioElements.forEach((element) => {
-        element.addEventListener("click", () => {
-            const audioSrc = element.getAttribute("data-audio");
-            const audio = new Audio(audioSrc!);
-            audio.play();
-        });
-    });
-</script>
-
-
 <script type="module">
   import { initCompleteButton } from "/src/scripts/progressClient.ts";
 
