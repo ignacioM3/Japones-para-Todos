@@ -28,6 +28,7 @@ export function completeLesson(id: string) {
   const progress = getProgress();
 
   const index = progress.findIndex((l) => l.id === id);
+  console.log(index)
 
   if (index === -1) return;
 
