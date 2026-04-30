@@ -2,9 +2,10 @@
 import VocabItem from "../../../../components/utils/VocabItem.astro";
 import Layout from "../../../../layouts/Layout.astro";
 import Aside from "../../../../components/utils/Aside.astro";
-import { seccionesClase0 } from "../../../../lib/lessons";
 import MainContainer from "../../../../components/styles/MainContainer.astro";
+import { getSecciones } from "../../../../lib/lessons";
 
+const seccionesClase0 = getSecciones("clase0");
 
 ---
 

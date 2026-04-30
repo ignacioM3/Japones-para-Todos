@@ -2,8 +2,10 @@
 import MainContainer from "../../../../components/styles/MainContainer.astro";
 import Aside from "../../../../components/utils/Aside.astro";
 import Layout from "../../../../layouts/Layout.astro";
-import { seccionesClase0 } from "../../../../lib/lessons";
 import TextIntro from "../../../../components/styles/TextIntro.astro";
+import { getSecciones } from "../../../../lib/lessons";
+
+const seccionesClase0 = getSecciones("clase0");
 ---
 
 <Layout title={"Clase 0 - Tarea de Katakana"}>

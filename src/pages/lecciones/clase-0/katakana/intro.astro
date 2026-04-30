@@ -7,7 +7,9 @@ import { getCollection } from "astro:content";
 import Layout from "../../../../layouts/Layout.astro";
 import MainContainer from "../../../../components/styles/MainContainer.astro";
 import Aside from "../../../../components/utils/Aside.astro";
-import { seccionesClase0 } from "../../../../lib/lessons";
+import { getSecciones } from "../../../../lib/lessons";
+
+const seccionesClase0 = getSecciones("clase0");
 
 const katakana = await getCollection("katakana");
 

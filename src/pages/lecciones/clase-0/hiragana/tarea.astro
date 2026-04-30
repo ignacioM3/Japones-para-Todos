@@ -4,7 +4,9 @@ import { Icon } from "astro-icon/components";
 import Layout from "../../../../layouts/Layout.astro";
 import MainContainer from "../../../../components/styles/MainContainer.astro";
 import Aside from "../../../../components/utils/Aside.astro";
-import { seccionesClase0 } from "../../../../lib/lessons";
+import { getSecciones } from "../../../../lib/lessons";
+
+const seccionesClase0 = getSecciones("clase0");
 ---
 
 <Layout title={"Clase 0 - Tarea de Hiragana"}>

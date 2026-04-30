@@ -6,10 +6,11 @@ import KanaCard from "../../../../components/utils/KanaCard.astro";
 import { getCollection } from "astro:content";
 import Layout from "../../../../layouts/Layout.astro";
 import MainContainer from "../../../../components/styles/MainContainer.astro";
-import { seccionesClase0 } from "../../../../lib/lessons";
 import Aside from "../../../../components/utils/Aside.astro";
 const hiragana = await getCollection("hiragana");
+import { getSecciones } from "../../../../lib/lessons";
 
+const seccionesClase0 = getSecciones("clase0");
 const sorted = hiragana.sort((a, b) =>
     a.id.localeCompare(b.id, undefined, { numeric: true }),
 );
