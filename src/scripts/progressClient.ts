@@ -28,7 +28,8 @@ export function initCompleteButton(buttonId: string, lessonId: string) {
 
   if (!btn) return;
 
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
     completeLesson(lessonId);
     location.reload(); // simple pero efectivo
   });
