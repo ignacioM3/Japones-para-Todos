@@ -5,7 +5,6 @@ const { title = "Japones Para Todos" } = Astro.props;
 import Header from "../components/utils/Header";
 ---
 
-
 <!doctype html>
 <html lang="es">
 	<head>
@@ -18,14 +17,14 @@ import Header from "../components/utils/Header";
 	<body class="bg-gray-100">
 		<Header client:load />
 		<slot />
-<script>
-  import "../utils/audio-init";
-  import { initAsideProgress } from "../scripts/progressClient";
+		<script>
+			import "../utils/audio-init";
+			import { initAsideProgress } from "../scripts/progressClient";
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initAsideProgress();
-  });
-</script>
+			document.addEventListener("DOMContentLoaded", () => {
+				initAsideProgress();
+			});
+		</script>
 	</body>
 </html>
 

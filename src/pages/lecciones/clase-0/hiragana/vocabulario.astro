@@ -103,10 +103,12 @@ import MainContainer from "../../../../components/styles/MainContainer.astro";
     </MainContainer>
 </Layout>
 
-<script type="module">
-  import { initCompleteButton } from "/src/scripts/progressClient.ts";
 
-  initCompleteButton("complete-btn", "hiragana-vocab");
+<script>
+  import { initCompleteButton } from "../../../../scripts/progressClient";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initCompleteButton("complete-btn", "hiragana-vocab");
+  });
 </script>
-
 

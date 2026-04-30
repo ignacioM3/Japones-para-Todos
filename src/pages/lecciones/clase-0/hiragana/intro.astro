@@ -400,8 +400,10 @@ const hiraganaData3 = sorted[2];
 </Layout>
 
 
-<script type="module">
-  import { initCompleteButton } from "/src/scripts/progressClient.ts";
-  initCompleteButton("complete-btn", "hiragana-intro");
-</script>
+<script>
+  import { initCompleteButton } from "../../../../scripts/progressClient";
 
+  document.addEventListener("DOMContentLoaded", () => {
+    initCompleteButton("complete-btn", "hiragana-intro");
+  });
+</script>

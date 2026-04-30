@@ -288,8 +288,11 @@ const katakanaData3 = sorted[2];
 </Layout>
 
 
-<script type="module">
-  import { initCompleteButton } from "/src/scripts/progressClient.ts";
 
-  initCompleteButton("complete-btn", "katakana-intro");
+<script>
+  import { initCompleteButton } from "../../../../scripts/progressClient";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initCompleteButton("complete-btn", "katakana-intro");
+  });
 </script>

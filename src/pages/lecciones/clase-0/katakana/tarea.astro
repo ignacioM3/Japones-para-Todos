@@ -83,8 +83,10 @@ import TextIntro from "../../../../components/styles/TextIntro.astro";
 </Layout>
 
 
-<script type="module">
-  import { initCompleteButton } from "/src/scripts/progressClient.ts";
+<script>
+  import { initCompleteButton } from "../../../../scripts/progressClient";
 
-  initCompleteButton("complete-btn", "katakana-task");
+  document.addEventListener("DOMContentLoaded", () => {
+    initCompleteButton("complete-btn", "katakana-task");
+  });
 </script>

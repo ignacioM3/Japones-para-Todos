@@ -121,8 +121,10 @@ import { seccionesClase0 } from "../../../../lib/lessons";
 
 
 
-<script type="module">
-  import { initCompleteButton } from "/src/scripts/progressClient.ts";
+<script>
+  import { initCompleteButton } from "../../../../scripts/progressClient";
 
-  initCompleteButton("complete-btn", "hiragana-task");
+  document.addEventListener("DOMContentLoaded", () => {
+    initCompleteButton("complete-btn", "hiragana-task");
+  });
 </script>
