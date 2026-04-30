@@ -2,7 +2,7 @@ import { playSound } from "./audio";
 
 
 document.addEventListener("click", (e) => {
-  const target = e.target as HTMLElement;
+  const target = e.target
 
   const dataAudio = target.closest("[data-audio]");
 
