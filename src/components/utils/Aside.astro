@@ -23,36 +23,13 @@ const { sections } = Astro.props;
   </div>
 </aside>
 
-
 <aside class="bg-white text-gray-500 font-mono font-bold fixed md:hidden mt-15 z-101 w-full flex justify-center items-center shadow-md rounded-b-md">
   <select id="tema" class="bg-white text-center w-full p-2.5">
     <option value="">Selecciona una sección</option>
-
     {sections.map((section: Section) => (
-      <option value={section.id}>
+      <option value={`#${section.id}`} data-path={section.path}>
         {section.label} {section.title}
       </option>
     ))}
   </select>
 </aside>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const select = document.getElementById("tema");
-
-    select?.addEventListener("change", (e) => {
-      const target = e.target as HTMLSelectElement;
-      const id = target.value;
-
-      if (!id) return;
-
-      const element = document.getElementById(id);
-
-      element?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
-  });
-</script>
