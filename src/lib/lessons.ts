@@ -15,6 +15,8 @@ export const lessons = {
   ],
 };
 
+export type ClaseKey = keyof typeof lessons;
+
 export const seccionesClase0 = lessons.clase0.map((l, i) => ({
     id: l.id,
     label: String.fromCharCode(65 + i),
@@ -32,3 +34,12 @@ export const getSecciones = (clase: keyof typeof lessons) => {
     path: l.path,
   }));
 };
+
+export function getClaseByLessonId(id: string): ClaseKey | undefined {
+  for (const [clase, lecciones] of Object.entries(lessons)) {
+    if (lecciones.some(l => l.id === id)) {
+      return clase as ClaseKey;
+    }
+  }
+  return undefined;
+}

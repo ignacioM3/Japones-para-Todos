@@ -1,15 +1,17 @@
+// scripts/progressClient.ts
 import { completeLesson, getProgress } from "../lib/progressServices";
-
+import { getClaseByLessonId, type ClaseKey } from "../lib/lessons";
 
 export function initAsideProgress() {
-  const progress = getProgress();
-
   const links = document.querySelectorAll("a[data-id]");
 
   links.forEach((link) => {
-    const id = link.getAttribute("data-id");
-    const lesson = progress.find((l) => l.id === id);
+    const id = link.getAttribute("data-id")!;
+    const clase = getClaseByLessonId(id);
+    if (!clase) return;
 
+    const progress = getProgress(clase);
+    const lesson = progress.find(l => l.id === id);
     if (!lesson) return;
 
     if (lesson.status === "locked") {
@@ -23,13 +25,12 @@ export function initAsideProgress() {
   });
 }
 
-export function initCompleteButton(buttonId: string, lessonId: string) {
+export function initCompleteButton(buttonId: string, lessonId: string, clase: ClaseKey) {
   const btn = document.getElementById(buttonId);
-
   if (!btn) return;
 
   btn.addEventListener("click", () => {
-    completeLesson(lessonId);
-    location.reload(); // simple pero efectivo
+    completeLesson(clase, lessonId);
+    location.reload();
   });
 }
