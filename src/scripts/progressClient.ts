@@ -31,39 +31,60 @@ function setupMobileSelect() {
   const select = document.getElementById("tema") as HTMLSelectElement | null;
   if (!select) return;
 
-  // Obtener la clase actual desde la URL
+  // Obtener la ruta actual
   const currentPath = window.location.pathname;
-  const claseMatch = currentPath.match(/\/lecciones\/(clase-\d+)/);
-  const claseBase = claseMatch ? claseMatch[1] : "";
+  
+  // Obtener todos los links del desktop (que ya tienen href correcto)
+  const desktopLinks = document.querySelectorAll("a[data-id]");
+  const linkMap = new Map();
+  
+  desktopLinks.forEach((link) => {
+    const id = link.getAttribute("data-id");
+    const href = link.getAttribute("href");
+    if (id && href) {
+      linkMap.set(id, href);
+    }
+  });
 
-  // Recorremos las opciones
+  // Variable para almacenar el ID de la sección actual
+  let currentSectionId: string | null = null;
+
+  // Aplicar estados y guardar hrefs
   Array.from(select.options).forEach((option) => {
-    const sectionId = option.value?.slice(1); // ej: "particula-は"
-    const path = option.getAttribute("data-path"); // ej: "hiragana/vocabulario"
-    
-    if (!sectionId || !path) return;
+    const sectionId = option.value?.slice(1);
+    if (!sectionId) return;
+
+    const href = linkMap.get(sectionId);
+    if (href) {
+      option.setAttribute("data-href", href);
+      
+      // Verificar si esta opción corresponde a la página actual
+      if (href === currentPath) {
+        currentSectionId = sectionId;
+      }
+    }
 
     const clase = getClaseByLessonId(sectionId);
     if (!clase) return;
 
     const progress = getProgress(clase);
     const lesson = progress.find(l => l.id === sectionId);
-    if (!lesson) return;
-
+    
     const originalText = option.textContent?.trim() || "";
     if (!originalText.startsWith("✔") && !originalText.startsWith("🔒")) {
-      if (lesson.status === "locked") {
+      if (lesson?.status === "locked") {
         option.textContent = `🔒 ${originalText}`;
         option.disabled = true;
-      } else if (lesson.status === "completed") {
+      } else if (lesson?.status === "completed") {
         option.textContent = `✔ ${originalText}`;
       }
     }
-
-    // Construir la URL correcta usando el path de la sección
-    const targetUrl = `/lecciones/${claseBase}/${path}`;
-    option.setAttribute("data-href", targetUrl);
   });
+
+  // Preseleccionar la opción actual si existe
+  if (currentSectionId) {
+    select.value = `#${currentSectionId}`;
+  }
 
   // Evento de cambio: navegar a la URL almacenada
   select.addEventListener("change", (event) => {
@@ -74,8 +95,6 @@ function setupMobileSelect() {
     if (href && !selectedOption.disabled) {
       window.location.href = href;
     }
-    
-    target.value = "";
   });
 }
 
