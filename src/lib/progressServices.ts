@@ -12,7 +12,6 @@ export function getProgress(clase: ClaseKey): LessonProgress[] {
 
   if (data) return JSON.parse(data);
 
-  // estado inicial
   const lecciones = lessons[clase];
   const initial = lecciones.map((l, i) => ({
     id: l.id,
@@ -35,10 +34,8 @@ export function completeLesson(clase: ClaseKey, id: string) {
 
   if (index === -1) return;
 
-  // marcar como completada
   progress[index].status = LessonStatus.Completed;
 
-  // desbloquear siguiente
  if (index + 1 < progress.length && progress[index + 1].status === LessonStatus.Locked) {
     progress[index + 1].status = LessonStatus.Available;
   }
